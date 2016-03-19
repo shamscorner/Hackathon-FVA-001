@@ -14,4 +14,10 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <!-- Button color style -->
+    <style name="btn_wood">
+        <item name="android:textColor">#9C7E04</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
 </resources>
