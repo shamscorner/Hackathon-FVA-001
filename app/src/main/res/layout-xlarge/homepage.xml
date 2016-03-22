@@ -17,7 +17,7 @@
         android:layout_marginLeft="15dp"
         android:layout_marginStart="15dp"
         android:layout_marginBottom="15dp"
-        android:background="@drawable/background_btn_progress" />
+        android:background="@drawable/background_process_front" />
 
     <ToggleButton
         android:id="@+id/btn_sound"
@@ -47,7 +47,7 @@
 
     <Button
         android:layout_width="330dp"
-        android:layout_height="100dp"
+        android:layout_height="120dp"
         android:id="@+id/btn_start"
         android:layout_marginTop="60dp"
         android:layout_below="@+id/btn_about"
@@ -58,10 +58,10 @@
         style="@style/btn_wood"/>
 
     <Button
-        android:layout_width="290dp"
-        android:layout_height="80dp"
+        android:layout_width="400dp"
+        android:layout_height="90dp"
         android:id="@+id/btn_language"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="15dp"
         android:layout_below="@+id/btn_start"
         android:layout_centerHorizontal="true"
         android:background="@drawable/background_btn_language"
@@ -70,16 +70,15 @@
         style="@style/btn_wood"/>
 
     <Button
-        android:layout_width="220dp"
-        android:layout_height="80dp"
+        android:layout_width="250dp"
+        android:layout_height="90dp"
         android:id="@+id/btn_exit"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="15dp"
         android:layout_below="@+id/btn_language"
         android:layout_centerHorizontal="true"
         android:background="@drawable/background_btn_exit"
         android:text="@string/btn_exit"
         android:textSize="30sp"
-        android:onClick="closeApplication"
         style="@style/btn_wood"/>
 
 

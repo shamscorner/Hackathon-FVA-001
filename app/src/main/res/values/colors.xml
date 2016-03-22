@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="pure_white">#ffffff</color>
+    <color name="level_wood_back">#773B30</color>
+
 </resources>

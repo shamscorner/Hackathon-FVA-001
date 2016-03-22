@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_map">
+
+    <ImageButton
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/btn_back"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/background_btn_progress"
+        android:onClick="goHomapageScreen"/>
+
+    <ImageButton
+        android:layout_width="115dp"
+        android:layout_height="150dp"
+        android:id="@+id/btn_map_found_in_wall"
+        android:layout_marginLeft="273dp"
+        android:layout_marginStart="273dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/map"
+        android:onClick="openMap"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/btn_back"
+        android:layout_toEndOf="@+id/btn_back" />
+</RelativeLayout>

@@ -5,4 +5,26 @@
     <string name="btn_start">Start</string>
     <string name="btn_language">Language</string>
     <string name="btn_exit">Exit</string>
+    <string name="language_header">Language</string>
+    <string name="language_english">English</string>
+    <string name="language_bangla">Bangla</string>
+    <string name="ask_homepage">Go Back To Homepage ?</string>
+    <string name="stay">Stay</string>
+    <string name="go">Go</string>
+    <string name="map_found">Map Found</string>
+    <string name="open">Open</string>
+    <string name="pollution">Pollution Level</string>
+    <string name="unorganized">Unorganized Level</string>
+    <string name="risk">Risk Level</string>
+    <string name="percent">30%</string>
+    <string name="enter">Enter</string>
+    <string name="lev_pol_text">Pollution</string>
+    <string name="lev_un_text">Unorganized</string>
+    <string name="lev_lev_risk">Risk</string>
+    <string name="lev_time_text">Time</string>
+    <string name="lev_score_text">Score</string>
+    <string name="task_completed">Task Completed</string>
+    <string name="task_remain">Task Remain</string>
+    <string name="map">Map</string>
+    <string name="hint">Hints</string>
 </resources>
