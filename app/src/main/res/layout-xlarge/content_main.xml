@@ -22,8 +22,8 @@
         android:layout_width="640dp"
         android:layout_height="100dp"
         android:background="@drawable/background_nature"
-        android:id="@+id/imageView"
-        android:layout_below="@+id/animated_splash"
+        android:id="@+id/image_save_nature"
+        android:layout_below="@id/animated_splash"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="28dp" />
 </RelativeLayout>

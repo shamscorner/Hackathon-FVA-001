@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="400dp"
-    android:layout_height="170dp"
+    android:layout_height="180dp"
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
     android:paddingTop="20dp"
@@ -14,9 +14,16 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="10dp"
-        android:text="@string/ask_homepage"
+        android:text="@string/are_you_sure"
         android:textColor="#3e0c0e"
         android:textSize="25sp"
+        android:textStyle="bold"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/data_loss"
+        android:textColor="#3e0c0e"
         android:textStyle="bold"/>
 
 
@@ -28,26 +35,28 @@
         android:orientation="horizontal" >
 
         <Button
-            android:id="@+id/btn_stay"
+            android:id="@+id/btn_map_no"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:background="@drawable/button_dialog"
-            android:text="@string/stay"
+            android:text="@string/no"
             android:textColor="#e4a16a"
             android:textStyle="bold"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:onClick="stayOnLevel"/>
 
         <Button
-            android:id="@+id/btn_go"
+            android:id="@+id/btn_map_yes"
             android:layout_width="120dp"
             android:layout_height="50dp"
             android:layout_marginStart="5dp"
             android:layout_marginLeft="5dp"
             android:background="@drawable/button_dialog"
-            android:text="@string/go"
+            android:text="@string/yes"
             android:textColor="#e4a16a"
             android:textStyle="bold"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:onClick="goBackToMap"/>
     </LinearLayout>
 
 </LinearLayout>

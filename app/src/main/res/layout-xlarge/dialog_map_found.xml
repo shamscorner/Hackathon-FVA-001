@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="400dp"
+    android:layout_width="600dp"
     android:layout_height="wrap_content"
     android:background="@drawable/background_dialog_map_found">
 
@@ -8,13 +8,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="15dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="@string/map_found"
         android:id="@+id/textView"
         android:textColor="#e4a16a"
         android:textStyle="bold"
-        android:textSize="24sp"
+        android:textSize="34sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
@@ -24,23 +24,23 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/textView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="15dp"
         android:background="#e4a16a"
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
         android:paddingRight="10dp"
         android:paddingBottom="10dp">
         <ImageView
-            android:layout_width="130dp"
-            android:layout_height="150dp"
+            android:layout_width="150dp"
+            android:layout_height="180dp"
             android:id="@+id/imageView2"
             android:background="@drawable/map" />
     </RelativeLayout>
 
     <Button
         android:id="@+id/btn_map_open"
-        android:layout_width="100dp"
-        android:layout_height="35dp"
+        android:layout_width="130dp"
+        android:layout_height="45dp"
         android:layout_below="@id/layout_map_holder"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"

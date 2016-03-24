@@ -32,7 +32,7 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_gravity="left|bottom"
+                android:layout_gravity="start|bottom"
                 android:background="@drawable/background_btn_progress"
                 android:onClick="goHomapageScreen2"/>
 

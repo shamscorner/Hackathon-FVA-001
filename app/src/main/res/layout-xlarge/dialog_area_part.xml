@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="450dp"
-    android:layout_height="255dp"
+    android:layout_width="650dp"
+    android:layout_height="360dp"
     android:orientation="horizontal"
     android:padding="3dp"
     android:background="#e4a16a">
@@ -43,13 +43,13 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="18dp"
             style="@style/btn_wood"/>
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textView2"
+            android:layout_below="@id/textView2"
             android:orientation="horizontal">
             <ProgressBar
                 style="?android:attr/progressBarStyleHorizontal"
@@ -64,6 +64,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/percent"
+                android:layout_marginStart="5dp"
                 android:layout_marginLeft="5dp"
                 android:id="@+id/percent_pollution"
                 style="@style/btn_wood"/>
@@ -79,13 +80,13 @@
             android:id="@+id/textView3"
             android:layout_below="@id/textView2"
             android:layout_marginTop="25dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="18dp"
             style="@style/btn_wood"/>
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textView3"
+            android:layout_below="@id/textView3"
             android:orientation="horizontal">
             <ProgressBar
                 style="?android:attr/progressBarStyleHorizontal"
@@ -99,6 +100,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_marginStart="5dp"
                 android:layout_marginLeft="5dp"
                 android:text="@string/percent"
                 android:id="@+id/percent_unorganized"
@@ -113,13 +115,13 @@
             android:id="@+id/textView4"
             android:layout_below="@id/textView3"
             android:layout_marginTop="25dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="18dp"
             style="@style/btn_wood"/>
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textView4"
+            android:layout_below="@id/textView4"
             android:orientation="horizontal"
             android:id="@+id/linearLayout">
             <ProgressBar
@@ -134,6 +136,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_marginStart="5dp"
                 android:layout_marginLeft="5dp"
                 android:text="@string/percent"
                 android:id="@+id/percent_risk"
@@ -141,21 +144,22 @@
         </LinearLayout>
 
         <Button
-            android:layout_width="100dp"
-            android:layout_height="25dp"
+            android:layout_width="150dp"
+            android:layout_height="45dp"
             android:text="@string/enter"
             android:id="@+id/btn_start_level"
             style="@style/btn_wood"
             android:background="@drawable/button_dialog"
-            android:layout_below="@+id/linearLayout"
+            android:layout_below="@id/linearLayout"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="35dp"
+            android:textSize="22sp"/>
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:id="@+id/btn_cancel_area_part_dialog"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:background="@drawable/background_cancel"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"

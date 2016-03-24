@@ -27,4 +27,27 @@
     <string name="task_remain">Task Remain</string>
     <string name="map">Map</string>
     <string name="hint">Hints</string>
+    <string name="next"><u><![CDATA[Next >>]]></u></string>
+    <string name="skip"><u>Skip</u></string>
+    <string name="find_map">Find Map</string>
+    <string name="go_to_store_room">Go to store room</string>
+    <string name="are_you_sure">Are you sure ?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="data_loss">Progress will loss</string>
+    <string name="text_continue">Continue</string>
+    <string name="pollution_rate">Pollution Rate</string>
+    <string name="percent_poll">30%</string>
+    <string name="is_equal_to">=</string>
+    <string name="pollution_score">200</string>
+    <string name="elapsed_time">Elapsed Time</string>
+    <string name="Tools_used">Tools used</string>
+    <string name="total_final_score">Total Final Score</string>
+    <string name="new_high_score">New High Score</string>
+    <string name="password">Password</string>
+    <string name="play">Play</string>
+    <string name="name">Name</string>
+    <string name="create_account_info">This is a multiple user experience game.</string>
+    <string name="create_account_info2">So you have to provide your information to play this game.</string>
+    <string name="progress">Progress</string>
 </resources>

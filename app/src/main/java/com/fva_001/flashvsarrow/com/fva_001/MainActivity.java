@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast error_toast = Toast.makeText(getApplicationContext(), "Something went wrong", Toast.LENGTH_SHORT);
                     error_toast.show();
                 }finally {
-                    Intent openSplash = new Intent(getApplicationContext(), MapFound.class);
+                    Intent openSplash = new Intent(getApplicationContext(), HomepageActivity.class);
                     startActivity(openSplash);
                 }
             }

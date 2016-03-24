@@ -3,11 +3,11 @@ package com.fva_001.flashvsarrow.com.fva_001;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.*;
-import android.os.Process;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.ToggleButton;
 
 /**
@@ -67,9 +67,23 @@ public class HomepageActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 new ButtonClick(getApplicationContext(), v);
-                Intent intent = new Intent(HomepageActivity.this, MapFound.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                Intent intent = new Intent(getApplicationContext(), CreateAccount.class);
+                intent.putExtra("type", 1);
                 startActivity(intent);
+                overridePendingTransition(0, 0);
+            }
+        });
+
+        //handle the progress button
+        ImageButton btn_progress = (ImageButton)findViewById(R.id.btn_progress);
+        btn_progress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new ButtonClick(getApplicationContext(), v);
+                Intent intent = new Intent(getApplicationContext(), CreateAccount.class);
+                intent.putExtra("type", 2);
+                startActivity(intent);
+                overridePendingTransition(R.anim.anim_slide_in_left, R.anim.fade_out);
             }
         });
 
@@ -79,35 +93,42 @@ public class HomepageActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         // set the background music for the homepage
-        background_music = MediaPlayer.create(HomepageActivity.this, R.raw.background_homepage_music);
-        background_music.setLooping(true);
+        if(background_music != null){
+            background_music.setLooping(true);
+            background_music.start();
+        }else{
+            background_music = MediaPlayer.create(HomepageActivity.this, R.raw.background_homepage_music);
+            background_music.start();
+            background_music.setLooping(true);
+        }
+
     }
     @Override
     protected void onResume() {
         super.onResume();
         //play the background music
-        if(music_playing == false){
-            background_music.start();
+        if(background_music != null){
+            if(music_playing == false){
+                background_music.start();
+            }
         }
     }
     @Override
     protected void onPause() {
         super.onPause();
-        background_music.stop();
+        if(background_music != null){
+            background_music.stop();
+        }
     }
     @Override
-    protected void onStop() {
-        super.onStop();
-        background_music.stop();
-        background_music.release();
-    }
-    @Override
-    protected void onDestroy(){
+    public void onDestroy() {
+        if(background_music != null) {
+            background_music.release();
+            background_music = null;
+        }
         super.onDestroy();
-        background_music.stop();
-        background_music.release();
-        android.os.Process.killProcess(Process.myPid());
     }
+
 
     //the function for the back button
     private void goBack(){

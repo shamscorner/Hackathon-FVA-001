@@ -18,15 +18,15 @@
         android:onClick="goHomapageScreen"/>
 
     <ImageButton
-        android:layout_width="115dp"
-        android:layout_height="150dp"
+        android:layout_width="110dp"
+        android:layout_height="130dp"
         android:id="@+id/btn_map_found_in_wall"
-        android:layout_marginLeft="273dp"
-        android:layout_marginStart="273dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginLeft="280dp"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/map"
-        android:onClick="openMap"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/btn_back"
-        android:layout_toEndOf="@+id/btn_back" />
+        android:layout_toEndOf="@id/btn_back"
+        android:layout_toRightOf="@id/btn_back"
+        android:onClick="openMap"/>
 </RelativeLayout>

@@ -44,6 +44,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="@string/lev_un_text"
+                android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
                 style="@style/level_text"/>
 
@@ -67,6 +68,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="@string/lev_lev_risk"
+                android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
                 style="@style/level_text"/>
 
@@ -98,7 +100,9 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="@string/lev_time_text"
+                android:layout_marginStart="10dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 style="@style/level_text"/>
 
@@ -140,6 +144,14 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/go"
+            android:id="@+id/button"
+            android:layout_gravity="center"
+            android:onClick="goCompleted"/>
+
     </FrameLayout>
 
     <RelativeLayout
@@ -152,7 +164,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/map"
-            android:id="@+id/button2"
+            android:id="@+id/btn_map_in_level"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -181,6 +193,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="@string/task_completed"
@@ -199,7 +212,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
                 android:layout_marginRight="5dp"
+                android:layout_marginStart="25dp"
                 android:layout_marginLeft="25dp"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="@string/task_remain"
