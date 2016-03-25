@@ -2,6 +2,8 @@ package com.fva_001.flashvsarrow.com.fva_001;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.*;
 import android.view.View;
@@ -13,13 +15,13 @@ import android.widget.Button;
  */
 public class Dialog_exit extends Dialog implements android.view.View.OnClickListener {
 
-    public Activity c;
+    public Context c;
     public Button yes, no;
 
     public Dialog_exit(Activity a) {
         super(a);
         // TODO Auto-generated constructor stub
-        this.c = a;
+        this.c = a.getApplicationContext();
     }
 
     @Override
@@ -39,7 +41,11 @@ public class Dialog_exit extends Dialog implements android.view.View.OnClickList
         new ButtonClick(getContext(), v);
         switch (v.getId()) {
             case R.id.btn_exit:
-
+                //exit the app totally
+                Intent intent = new Intent(getContext(), MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK |Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                intent.putExtra("EXIT", true);
+                c.startActivity(intent);
                 break;
             case R.id.btn_cancel:
                 dismiss();

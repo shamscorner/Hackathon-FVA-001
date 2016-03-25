@@ -4,15 +4,29 @@ import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        //set the background in full screen mode
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
+        /*
+        //exit the app if the exit button is pressed
+        if (getIntent().getBooleanExtra("EXIT", false)) {
+            finish();
+            android.os.Process.killProcess(android.os.Process.myPid());
+        }
+        */
 
         // Play the animation on the splash screen
         ImageView mImageAnimatedSplash = (ImageView)findViewById(R.id.animated_splash);
@@ -24,9 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 try{
                     sleep(10000);
                 }catch (InterruptedException e){
-                    //e.printStackTrace();
-                    Toast error_toast = Toast.makeText(getApplicationContext(), "Something went wrong", Toast.LENGTH_SHORT);
-                    error_toast.show();
+                    e.printStackTrace();
                 }finally {
                     Intent openSplash = new Intent(getApplicationContext(), HomepageActivity.class);
                     startActivity(openSplash);
@@ -34,5 +46,12 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         timer.start();
+    }
+
+    @Override
+    public void onDestroy() {
+        //finish();
+        //android.os.Process.killProcess(android.os.Process.myPid());
+        super.onDestroy();
     }
 }

@@ -5,6 +5,8 @@ import android.media.MediaPlayer;
 import android.os.*;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
@@ -20,7 +22,13 @@ public class HomepageActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        //set the background in full screen mode
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.homepage);
 
         //get the sound button and handle the listener
@@ -67,8 +75,8 @@ public class HomepageActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 new ButtonClick(getApplicationContext(), v);
-                Intent intent = new Intent(getApplicationContext(), CreateAccount.class);
-                intent.putExtra("type", 1);
+                Intent intent = new Intent(getApplicationContext(), SeekStoreroom.class);
+                //intent.putExtra("type", 1);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -81,7 +89,7 @@ public class HomepageActivity extends AppCompatActivity {
             public void onClick(View v) {
                 new ButtonClick(getApplicationContext(), v);
                 Intent intent = new Intent(getApplicationContext(), CreateAccount.class);
-                intent.putExtra("type", 2);
+                //intent.putExtra("type", 2);
                 startActivity(intent);
                 overridePendingTransition(R.anim.anim_slide_in_left, R.anim.fade_out);
             }
