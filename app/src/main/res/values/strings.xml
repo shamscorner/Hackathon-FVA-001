@@ -44,10 +44,10 @@
     <string name="Tools_used">Tools used</string>
     <string name="total_final_score">Total Final Score</string>
     <string name="new_high_score">New High Score</string>
-    <string name="password">Password</string>
+    <string name="password">Password : </string>
     <string name="play">Play</string>
-    <string name="name">Name</string>
+    <string name="name">Name : </string>
     <string name="create_account_info">This is a multiple user experience game.</string>
-    <string name="create_account_info2">So you have to provide your information to play this game.</string>
+    <string name="create_account_info2">By creating an account you can see your progress level from here.</string>
     <string name="progress">Progress</string>
 </resources>

@@ -39,4 +39,16 @@
         android:textSize="28sp"
         android:textColor="#3e0c0e"
         android:textStyle="bold"/>
+
+    <ImageButton
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/dialog_language_close"
+        android:background="@drawable/background_cancel"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp"/>
 </RelativeLayout>

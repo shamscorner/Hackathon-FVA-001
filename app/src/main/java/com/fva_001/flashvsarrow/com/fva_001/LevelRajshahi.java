@@ -20,6 +20,7 @@ public class LevelRajshahi  extends AppCompatActivity {
         //set the background in full screen mode
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.level_rajshahi);

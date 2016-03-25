@@ -4,29 +4,71 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_map">
 
-    <ImageButton
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:id="@+id/btn_back"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="6dp"
-        android:layout_marginStart="6dp"
-        android:layout_marginBottom="6dp"
-        android:background="@drawable/background_btn_progress"
-        android:onClick="goHomapageScreen"/>
+
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="220dp"
+        android:id="@+id/image_intro_man_find_map"
+        android:background="@drawable/animation_intro_man"
+        android:layout_alignParentBottom="true" />
 
     <ImageButton
         android:layout_width="60dp"
         android:layout_height="70dp"
         android:id="@+id/btn_map_found_in_wall"
-        android:layout_marginLeft="140dp"
-        android:layout_marginStart="140dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginLeft="43dp"
+        android:layout_marginStart="43dp"
         android:background="@drawable/map"
+        android:layout_marginTop="25dp"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@id/btn_back"
-        android:layout_toRightOf="@id/btn_back"
+        android:layout_toRightOf="@+id/image_intro_man_find_map"
+        android:layout_toEndOf="@+id/image_intro_man_find_map"
         android:onClick="openMap"/>
+
+    <ImageButton
+        android:layout_width="45dp"
+        android:layout_height="48dp"
+        android:id="@+id/btn_progress_find_map"
+        android:layout_marginLeft="63dp"
+        android:layout_marginStart="63dp"
+        android:layout_marginBottom="38dp"
+        android:background="@drawable/find_map_progress"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/btn_map_found_in_wall"
+        android:layout_toEndOf="@+id/btn_map_found_in_wall"
+        android:onClick="openProgressFindMap"/>
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="60dp"
+        android:id="@+id/btn_story_find_map"
+        android:background="@drawable/find_map_story"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/image_intro_man_find_map"
+        android:layout_toEndOf="@+id/image_intro_man_find_map"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:onClick="openStory"/>
+
+    <ImageButton
+        android:layout_width="55dp"
+        android:layout_height="75dp"
+        android:id="@+id/btn_language_find_map"
+        android:background="@drawable/find_map_language"
+        android:layout_above="@+id/btn_progress_find_map"
+        android:layout_centerHorizontal="true"
+        android:onClick="openLanguageFindMap"/>
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/btn_back"
+        android:background="@drawable/background_btn_progress"
+        android:onClick="goHomapageScreen"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
 </RelativeLayout>

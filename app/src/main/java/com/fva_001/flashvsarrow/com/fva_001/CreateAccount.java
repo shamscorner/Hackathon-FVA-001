@@ -10,8 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.util.Objects;
-
 /**
  * Created by ShamimH on 25-Mar-16.
  */
@@ -27,6 +25,7 @@ public class CreateAccount extends AppCompatActivity {
         //set the background in full screen mode
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_account);
@@ -34,12 +33,11 @@ public class CreateAccount extends AppCompatActivity {
         btnPlay = (Button)findViewById(R.id.btn_play);
         btnPlay.setVisibility(View.INVISIBLE);
         btnProgress = (Button)findViewById(R.id.btn_see_progress);
-        //btnProgress.setVisibility(View.INVISIBLE);
+        btnProgress.setVisibility(View.INVISIBLE);
 
         inputName = (EditText)findViewById(R.id.input_name);
         inputPassword = (EditText)findViewById(R.id.input_password);
 
-        /*
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             type = extras.getInt("type");
@@ -50,17 +48,15 @@ public class CreateAccount extends AppCompatActivity {
         }else if(type == 2){
             btnProgress.setVisibility(View.VISIBLE);
         }
-        */
 
         btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                new ButtonClick(getApplicationContext(), v);
                 if(inputName.getText().toString().trim().matches("") && inputPassword.getText().toString().trim().matches("")){
                     Toast.makeText(getApplicationContext(), "You haven't fill this form", Toast.LENGTH_LONG).show();
                 }else{
-                    new ButtonClick(getApplicationContext(), v);
-                    Intent intent = new Intent(getApplicationContext(), SeekStoreroom.class);
-                    startActivity(intent);
+                    //open something when account is created
                 }
             }
         });
@@ -69,6 +65,11 @@ public class CreateAccount extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 new ButtonClick(getApplicationContext(), v);
+                if(inputName.getText().toString().trim().matches("") && inputPassword.getText().toString().trim().matches("")){
+                    Toast.makeText(getApplicationContext(), "You haven't fill this form", Toast.LENGTH_LONG).show();
+                }else{
+                    //open up the progress intent
+                }
             }
         });
     }

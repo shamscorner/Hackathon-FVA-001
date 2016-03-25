@@ -26,6 +26,7 @@ public class HomepageActivity extends AppCompatActivity {
         //set the background in full screen mode
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         super.onCreate(savedInstanceState);
 
@@ -89,7 +90,7 @@ public class HomepageActivity extends AppCompatActivity {
             public void onClick(View v) {
                 new ButtonClick(getApplicationContext(), v);
                 Intent intent = new Intent(getApplicationContext(), CreateAccount.class);
-                //intent.putExtra("type", 2);
+                intent.putExtra("type", 2);
                 startActivity(intent);
                 overridePendingTransition(R.anim.anim_slide_in_left, R.anim.fade_out);
             }

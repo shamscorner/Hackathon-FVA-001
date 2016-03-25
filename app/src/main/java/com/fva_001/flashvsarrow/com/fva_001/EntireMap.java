@@ -2,6 +2,7 @@ package com.fva_001.flashvsarrow.com.fva_001;
 
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
@@ -23,12 +24,17 @@ public class EntireMap extends AppCompatActivity implements View.OnTouchListener
         //set the background in full screen mode
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.entire_map);
 
         map_area = (ImageView)findViewById(R.id.map_area);
         map_area.setOnTouchListener(this);
+
+        // Play the animation on the intro man
+        ImageView mImageIntroMan = (ImageView)findViewById(R.id.image_intro_man_entire_map);
+        ((AnimationDrawable)mImageIntroMan.getBackground()).start();
     }
 
     @Override
