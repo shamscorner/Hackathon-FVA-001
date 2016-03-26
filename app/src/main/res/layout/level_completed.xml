@@ -409,7 +409,8 @@
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:textColor="@color/wooden_text"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:textSize="16sp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -429,7 +430,8 @@
                 android:id="@+id/final_score"
                 android:gravity="center"
                 android:textColor="@color/wooden_text"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:textSize="16sp"/>
         </LinearLayout>
 
         <RelativeLayout
