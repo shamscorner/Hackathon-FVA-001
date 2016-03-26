@@ -3,6 +3,7 @@ package com.fva_001.flashvsarrow.com.fva_001;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
@@ -17,7 +18,8 @@ import android.widget.Toast;
  */
 public class EntireMap extends AppCompatActivity implements View.OnTouchListener {
 
-    ImageView map_area;
+    private ImageView map_area;
+    private MediaPlayer background_music;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,39 @@ public class EntireMap extends AppCompatActivity implements View.OnTouchListener
         // Play the animation on the intro man
         ImageView mImageIntroMan = (ImageView)findViewById(R.id.image_intro_man_entire_map);
         ((AnimationDrawable)mImageIntroMan.getBackground()).start();
+
+        background_music = MediaPlayer.create(EntireMap.this, R.raw.background_jungle);
+        background_music.start();
+        background_music.setLooping(true);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        //play the background music
+        if(background_music != null){
+            background_music.start();
+            background_music.setLooping(true);
+        }else{
+            background_music = MediaPlayer.create(EntireMap.this, R.raw.background_jungle);
+            background_music.start();
+            background_music.setLooping(true);
+        }
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(background_music != null){
+            background_music.stop();
+        }
+    }
+    @Override
+    public void onDestroy() {
+        if(background_music != null) {
+            background_music.release();
+            background_music = null;
+        }
+        super.onDestroy();
     }
 
     @Override
