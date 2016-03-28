@@ -121,8 +121,10 @@ public class DialogArea extends Dialog {
                         break;
                     case "rajshahi":
                         Intent intent = new Intent(getContext(), LevelRajshahi.class);
-                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         c.startActivity(intent);
+                        dismiss();
                         break;
                     case "dhaka":
                         break;

@@ -1,5 +1,6 @@
 package com.fva_001.flashvsarrow.com.fva_001;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
@@ -12,6 +13,8 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import java.io.IOException;
 
 /**
  * Created by ShamimH on 22-Mar-16.
@@ -137,15 +140,12 @@ public class EntireMap extends AppCompatActivity implements View.OnTouchListener
         return true;
     }
 
-    public void goHomapageScreen2(View view){
-        new ButtonClick(getApplicationContext(), view);
-        goBack();
-    }
-
     // handle the go back function
     private void goBack(){
-        GoHomepage dialog = new GoHomepage(EntireMap.this);
-        dialog.show();
+        Intent intent = new Intent(getApplicationContext(), MapFound.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
     }
 
     //handle the back button

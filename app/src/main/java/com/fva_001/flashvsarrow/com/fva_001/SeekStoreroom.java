@@ -71,15 +71,6 @@ public class SeekStoreroom extends AppCompatActivity {
         storeHolder = (LinearLayout)findViewById(R.id.go_to_store_holder);
         storeHolder.setVisibility(View.INVISIBLE);
 
-        //go back to the homepage
-        Button btnGoback = (Button)findViewById(R.id.btn_gohomepage);
-        btnGoback.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goBack();
-            }
-        });
-
         // go to store room
         btn_go_store = (Button)findViewById(R.id.btn_go_to_store_room);
         btn_go_store.setOnClickListener(new View.OnClickListener() {
@@ -116,8 +107,8 @@ public class SeekStoreroom extends AppCompatActivity {
 
     // handle the go back function
     private void goBack(){
-        GoHomepage dialog = new GoHomepage(SeekStoreroom.this);
-        dialog.show();
+        Intent intent = new Intent(getApplicationContext(), HomepageActivity.class);
+        startActivity(intent);
     }
 
     //handle the back button

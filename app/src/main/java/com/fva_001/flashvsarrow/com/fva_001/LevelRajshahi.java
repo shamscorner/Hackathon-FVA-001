@@ -44,6 +44,7 @@ public class LevelRajshahi  extends AppCompatActivity {
     //handle the back button
     @Override
     public void onBackPressed() {
-
+        DialogGoBackToMap dialog = new DialogGoBackToMap(LevelRajshahi.this);
+        dialog.show();
     }
 }

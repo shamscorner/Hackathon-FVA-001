@@ -21,13 +21,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
-        /*
-        //exit the app if the exit button is pressed
-        if (getIntent().getBooleanExtra("EXIT", false)) {
-            finish();
-            android.os.Process.killProcess(android.os.Process.myPid());
-        }
-        */
 
         // Play the animation on the splash screen
         ImageView mImageAnimatedSplash = (ImageView)findViewById(R.id.animated_splash);
@@ -37,12 +30,19 @@ public class MainActivity extends AppCompatActivity {
         Thread timer = new Thread(){
             public void run(){
                 try{
-                    sleep(10000);
-                }catch (InterruptedException e){
-                    e.printStackTrace();
-                }finally {
-                    Intent openSplash = new Intent(getApplicationContext(), HomepageActivity.class);
+                    int timer=0;
+                    while(timer<7000) {
+                        sleep(100);
+                        timer = timer + 100;
+                    }
+                    Intent openSplash = new Intent(MainActivity.this, HomepageActivity.class);
                     startActivity(openSplash);
+                }
+                catch (InterruptedException e){
+                    e.printStackTrace();
+                }
+                finally {
+                    finish();
                 }
             }
         };
@@ -51,8 +51,20 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onDestroy() {
-        //finish();
-        //android.os.Process.killProcess(android.os.Process.myPid());
         super.onDestroy();
+    }
+    @Override
+    public void onPause() {
+        super.onPause();
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
+
     }
 }

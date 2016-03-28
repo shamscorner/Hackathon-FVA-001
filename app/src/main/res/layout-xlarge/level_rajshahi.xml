@@ -139,7 +139,7 @@
         </LinearLayout>
     </LinearLayout>
 
-    <FrameLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
@@ -149,8 +149,10 @@
             android:text="@string/go"
             android:id="@+id/button"
             android:layout_gravity="center"
-            android:onClick="goCompleted"/>
-    </FrameLayout>
+            android:onClick="goCompleted"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"

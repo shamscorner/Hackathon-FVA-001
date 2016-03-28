@@ -4,23 +4,12 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_layout_seek_store_room">
 
-    <Button
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:id="@+id/btn_gohomepage"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:background="@drawable/background_btn_progress"/>
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/image_intro_man"
         android:background="@drawable/animation_intro_man"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/btn_gohomepage"
-        android:layout_toEndOf="@+id/btn_gohomepage" />
+        android:layout_alignParentBottom="true" />
 
     <TextView
         android:layout_width="250dp"

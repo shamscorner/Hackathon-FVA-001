@@ -44,8 +44,10 @@ public class MapFoundDialog extends Dialog {
             public void onClick(View v) {
                 new ButtonClick(getContext(), v);
                 Intent entireMapIntent = new Intent(getContext(), EntireMap.class);
+                entireMapIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 entireMapIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 c.startActivity(entireMapIntent);
+                dismiss();
             }
         });
     }
