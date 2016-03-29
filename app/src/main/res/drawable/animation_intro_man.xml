@@ -6,6 +6,9 @@
         android:drawable="@drawable/position1"
         android:duration="1000"/>
     <item
+        android:drawable="@drawable/eye4"
+        android:duration="200"/>
+    <item
         android:drawable="@drawable/position3"
         android:duration="300"/>
     <item
