@@ -2,13 +2,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_map">
+    android:background="@drawable/background_map"
+    android:id="@+id/container_find_map">
 
 
 
     <ImageView
         android:layout_width="150dp"
-        android:layout_height="220dp"
+        android:layout_height="210dp"
         android:id="@+id/image_intro_man_find_map"
         android:background="@drawable/animation_intro_man"
         android:layout_alignParentBottom="true" />
@@ -69,6 +70,17 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:id="@+id/popup_msg"
+        android:layout_alignTop="@+id/btn_language_find_map"
+        android:layout_toRightOf="@+id/image_intro_man_find_map"
+        android:layout_toEndOf="@+id/image_intro_man_find_map"
+        android:textColor="#fed7c6"
+        android:background="@drawable/rounded_transparent"/>
 
 
 </RelativeLayout>

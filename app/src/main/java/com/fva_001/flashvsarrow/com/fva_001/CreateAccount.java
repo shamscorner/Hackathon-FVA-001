@@ -1,6 +1,7 @@
 package com.fva_001.flashvsarrow.com.fva_001;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 /**
@@ -16,12 +18,13 @@ import android.widget.Toast;
 public class CreateAccount extends AppCompatActivity {
 
     private Button btnPlay, btnProgress;
+    private ImageButton btnExit;
     private EditText inputName, inputPassword;
-    private int type;
+    private int type, exit;
+    private MediaPlayer background_music;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         //set the background in full screen mode
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -30,10 +33,16 @@ public class CreateAccount extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.create_account);
 
+        //set the background music
+        background_music = MediaPlayer.create(CreateAccount.this, R.raw.background_homepage_music);
+        background_music.start();
+        background_music.setLooping(true);
+
         btnPlay = (Button)findViewById(R.id.btn_play);
         btnPlay.setVisibility(View.INVISIBLE);
         btnProgress = (Button)findViewById(R.id.btn_see_progress);
         btnProgress.setVisibility(View.INVISIBLE);
+        btnExit = (ImageButton)findViewById(R.id.btn_exit_progress);
 
         inputName = (EditText)findViewById(R.id.input_name);
         inputPassword = (EditText)findViewById(R.id.input_password);
@@ -41,12 +50,19 @@ public class CreateAccount extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             type = extras.getInt("type");
+            exit = extras.getInt("exit");
         }
 
         if(type == 1){
             btnPlay.setVisibility(View.VISIBLE);
         }else if(type == 2){
             btnProgress.setVisibility(View.VISIBLE);
+        }
+
+        if(exit == 0){
+            btnExit.setVisibility(View.INVISIBLE);
+        }else if(exit == 1){
+            btnExit.setVisibility(View.VISIBLE);
         }
 
         btnPlay.setOnClickListener(new View.OnClickListener() {
@@ -84,7 +100,12 @@ public class CreateAccount extends AppCompatActivity {
     //handle the back button
     @Override
     public void onBackPressed() {
-        goBack();
+        if(exit == 0){
+            Intent intent = new Intent(getApplicationContext(), MapFound.class);
+            startActivity(intent);
+        }else if(exit == 1){
+            goBack();
+        }
     }
 
     public void backtohomepage(View v){

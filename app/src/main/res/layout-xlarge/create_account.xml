@@ -99,7 +99,7 @@
         <ImageButton
             android:layout_width="120dp"
             android:layout_height="120dp"
-            android:id="@+id/button2"
+            android:id="@+id/btn_exit_progress"
             android:background="@drawable/background_btn_progress"
             android:onClick="backtohomepage" />
 
@@ -108,12 +108,13 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="right"
-            android:paddingRight="50dp">
+            android:paddingRight="50dp"
+            android:paddingLeft="50dp">
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="120dp"
-                android:text="@string/progress"
+                android:text="@string/visit"
                 android:id="@+id/btn_see_progress"
                 android:background="@drawable/rounded_transparent"
                 android:textColor="@color/wooden_text"
@@ -122,7 +123,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="120dp"
-                android:text="@string/play"
+                android:text="@string/create"
                 android:id="@+id/btn_play"
                 android:background="@drawable/rounded_transparent"
                 android:textColor="@color/wooden_text"

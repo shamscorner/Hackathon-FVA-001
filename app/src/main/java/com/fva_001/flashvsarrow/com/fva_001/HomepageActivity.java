@@ -91,8 +91,20 @@ public class HomepageActivity extends AppCompatActivity {
                 new ButtonClick(getApplicationContext(), v);
                 Intent intent = new Intent(getApplicationContext(), CreateAccount.class);
                 intent.putExtra("type", 2);
+                intent.putExtra("exit", 1);
                 startActivity(intent);
                 overridePendingTransition(R.anim.anim_slide_in_left, R.anim.fade_out);
+            }
+        });
+
+        //handle for the about button
+        Button btnAbout = (Button)findViewById(R.id.btn_about);
+        btnAbout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new ButtonClick(getApplicationContext(), v);
+                Intent intent = new Intent(getApplicationContext(), About.class);
+                startActivity(intent);
             }
         });
 
