@@ -20,6 +20,7 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+
     <!-- style for the level section -->
     <style name="level_text">
         <item name="android:textColor">#FBBE9B</item>

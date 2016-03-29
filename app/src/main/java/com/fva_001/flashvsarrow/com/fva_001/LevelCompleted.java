@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -31,7 +32,7 @@ public class LevelCompleted extends AppCompatActivity {
     private Map<Integer, LinearLayout> objAnim;
     long time = 5000;
     int i = 1;
-
+    private MediaPlayer mplayer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -66,10 +67,13 @@ public class LevelCompleted extends AppCompatActivity {
         objAnimFinal = (LinearLayout)findViewById(R.id.completed_task_final);
         objDivider = (TextView)findViewById(R.id.completed_task_divider);
 
+////////////// Sound/////////
+        mplayer = MediaPlayer.create(LevelCompleted.this, R.raw.score_sound);
+        mplayer.start();
 
         int delay;
         for (i = 1; i < 8; i++) {
-            delay=(i*90)+1500;
+            delay=(i*90)+1000;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
                 objAnim.get(i).setScaleY(0f);
             }
