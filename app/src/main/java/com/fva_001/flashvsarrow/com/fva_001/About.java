@@ -30,6 +30,43 @@ public class About extends AppCompatActivity {
         background_music.start();
         background_music.setLooping(true);
     }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        // set the background music for the homepage
+        if(background_music != null){
+            background_music.setLooping(true);
+            background_music.start();
+        }else{
+            background_music = MediaPlayer.create(About.this, R.raw.background_homepage_music);
+            background_music.start();
+            background_music.setLooping(true);
+        }
+
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        //play the background music
+        if(background_music != null){
+            background_music.start();
+        }
+    }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(background_music != null){
+            background_music.stop();
+        }
+    }
+    @Override
+    public void onDestroy() {
+        if(background_music != null) {
+            background_music.release();
+            background_music = null;
+        }
+        super.onDestroy();
+    }
     //handle the back button
     @Override
     public void onBackPressed() {
