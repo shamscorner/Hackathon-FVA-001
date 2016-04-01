@@ -52,4 +52,5 @@
     <string name="visit">Visit</string>
     <string name="create_account">Create Account</string>
     <string name="visit_account">Visit Account</string>
+    <string name="reset">Reset</string>
 </resources>
