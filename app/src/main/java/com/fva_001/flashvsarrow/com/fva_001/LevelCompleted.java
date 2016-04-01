@@ -67,7 +67,7 @@ public class LevelCompleted extends AppCompatActivity {
         objAnimFinal = (LinearLayout)findViewById(R.id.completed_task_final);
         objDivider = (TextView)findViewById(R.id.completed_task_divider);
 
-////////////// Sound/////////
+        ////////////// Sound/////////
         mplayer = MediaPlayer.create(LevelCompleted.this, R.raw.score_sound);
         mplayer.start();
 

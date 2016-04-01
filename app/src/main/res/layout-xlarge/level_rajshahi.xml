@@ -142,16 +142,38 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/go"
-            android:id="@+id/button"
-            android:layout_gravity="center"
-            android:onClick="goCompleted"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
+        android:layout_weight="1"
+        android:background="@drawable/level_rajshahi">
+        <ImageView
+            android:layout_width="240dp"
+            android:layout_height="250dp"
+            android:id="@+id/img_dustbin"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/animation_dustbin"/>
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/img_banana_layer_1"
+            android:background="@drawable/banana_layer1"
+            android:layout_marginRight="121dp"
+            android:layout_marginEnd="121dp"
+            android:layout_alignTop="@+id/img_banana_layer_2"
+            android:layout_toLeftOf="@+id/img_banana_layer_2"
+            android:layout_toStartOf="@+id/img_banana_layer_2" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:id="@+id/img_banana_layer_2"
+            android:background="@drawable/banana_layer2"
+            android:layout_marginRight="286dp"
+            android:layout_marginEnd="286dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/img_dustbin"
+            android:layout_toStartOf="@+id/img_dustbin" />
     </RelativeLayout>
 
     <RelativeLayout

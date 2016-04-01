@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:drawable="@drawable/dustbin"
+        android:duration="200"/>
+    <item
+        android:drawable="@drawable/dustbin_success"
+        android:duration="200"/>
+    <item
+        android:drawable="@drawable/dustbin"
+        android:duration="200"/>
+    <item
+        android:drawable="@drawable/dustbin_success"
+        android:duration="200"/>
+    <item
+        android:drawable="@drawable/dustbin"
+        android:duration="200"/>
+
+</animation-list>
