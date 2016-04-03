@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
             public void run(){
                 try{
                     int timer=0;
-                    while(timer<8000) {
+                    while(timer<7100) {
                         sleep(100);
                         timer = timer + 100;
                     }

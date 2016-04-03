@@ -169,6 +169,274 @@
             android:layout_alignParentBottom="true"
             android:layout_toLeftOf="@+id/img_dustbin"
             android:layout_toStartOf="@+id/img_dustbin" />
+
+        <ImageButton
+            android:layout_width="180dp"
+            android:layout_height="140dp"
+            android:id="@+id/img_billboard_1"
+            android:background="@drawable/billboard2_bad"
+            android:layout_alignBottom="@+id/instruction"
+            android:layout_toRightOf="@+id/cupandstraw"
+            android:layout_toEndOf="@+id/cupandstraw" />
+
+        <ImageView
+            android:layout_width="320dp"
+            android:layout_height="200dp"
+            android:id="@+id/img_billboard_2"
+            android:background="@drawable/billboard1_bad"
+            android:layout_alignBottom="@+id/direction"
+            android:layout_toRightOf="@+id/bone"
+            android:layout_toEndOf="@+id/bone" />
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="90dp"
+            android:id="@+id/img_bench"
+            android:background="@drawable/bench"
+            android:layout_above="@+id/tap"
+            android:layout_toRightOf="@+id/cupandstraw"
+            android:layout_toEndOf="@+id/cupandstraw" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:id="@+id/poster1"
+            android:background="@drawable/poster1"
+            android:layout_below="@+id/img_billboard_1"
+            android:layout_toRightOf="@+id/img_bench"
+            android:layout_toEndOf="@+id/img_bench" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:id="@+id/poster2"
+            android:background="@drawable/poster2"
+            android:layout_alignBottom="@+id/poster1"
+            android:layout_toRightOf="@+id/img_billboard_1"
+            android:layout_toEndOf="@+id/img_billboard_1" />
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:id="@+id/poster4"
+            android:background="@drawable/poster4"
+            android:layout_alignTop="@+id/poster2"
+            android:layout_toRightOf="@+id/poster2"
+            android:layout_toEndOf="@+id/poster2" />
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/poster3"
+            android:background="@drawable/poster3"
+            android:layout_alignBottom="@+id/poster4"
+            android:layout_toRightOf="@+id/poster4"
+            android:layout_toEndOf="@+id/poster4"
+            android:layout_marginLeft="40dp"
+            android:layout_marginStart="40dp" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="65dp"
+            android:id="@+id/poster5"
+            android:background="@drawable/poster5"
+            android:layout_below="@+id/instruction"
+            android:layout_toRightOf="@+id/direction"
+            android:layout_toEndOf="@+id/direction" />
+
+        <ImageView
+            android:layout_width="85dp"
+            android:layout_height="105dp"
+            android:id="@+id/tap"
+            android:background="@drawable/animation_water_tap"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/img_dustbin"
+            android:layout_toStartOf="@+id/img_dustbin" />
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:id="@+id/street_light_1"
+            android:background="@drawable/street_signal1"
+            android:layout_above="@+id/img_billboard_2"
+            android:layout_toRightOf="@+id/street_light_2"
+            android:layout_toEndOf="@+id/street_light_2"
+            android:layout_marginBottom="33dp" />
+
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="65dp"
+            android:id="@+id/street_light_2"
+            android:background="@drawable/street_signal2"
+            android:layout_marginRight="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_above="@+id/light2"
+            android:layout_toLeftOf="@+id/bottle"
+            android:layout_toStartOf="@+id/bottle" />
+
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:id="@+id/book_shop"
+            android:background="@drawable/book_shop"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/paper"
+            android:layout_toEndOf="@+id/paper" />
+
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/direction"
+            android:background="@drawable/direction"
+            android:layout_below="@+id/book_shop"
+            android:layout_toRightOf="@+id/book_shop"
+            android:layout_toEndOf="@+id/book_shop" />
+
+        <ImageView
+            android:layout_width="73dp"
+            android:layout_height="60dp"
+            android:id="@+id/instruction"
+            android:background="@drawable/instruction"
+            android:layout_below="@+id/direction"
+            android:layout_alignRight="@+id/direction"
+            android:layout_alignEnd="@+id/direction" />
+
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:id="@+id/instruction2"
+            android:background="@drawable/instruction"
+            android:layout_alignTop="@+id/img_billboard_1"
+            android:layout_toLeftOf="@+id/garbage2"
+            android:layout_toStartOf="@+id/garbage2" />
+
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="40dp"
+            android:id="@+id/light1"
+            android:background="@drawable/light1_1"
+            android:layout_above="@+id/img_billboard_2"
+            android:layout_alignLeft="@+id/shoes"
+            android:layout_alignStart="@+id/shoes" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:id="@+id/light2"
+            android:background="@drawable/light2_1"
+            android:layout_above="@+id/instruction2"
+            android:layout_toLeftOf="@+id/light1"
+            android:layout_toStartOf="@+id/light1" />
+
+        <ImageView
+            android:layout_width="250dp"
+            android:layout_height="105dp"
+            android:id="@+id/garbage1"
+            android:background="@drawable/garbage1"
+            android:layout_alignBottom="@+id/cupandstraw"
+            android:layout_toLeftOf="@+id/garbage2"
+            android:layout_toStartOf="@+id/garbage2" />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="75dp"
+            android:id="@+id/garbage2"
+            android:background="@drawable/garbage2"
+            android:layout_alignTop="@+id/poster2"
+            android:layout_toLeftOf="@+id/street_light_2"
+            android:layout_toStartOf="@+id/street_light_2" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:id="@+id/paper"
+            android:background="@drawable/paper"
+            android:layout_below="@+id/packet"
+            android:layout_alignRight="@+id/street_light_2"
+            android:layout_alignEnd="@+id/street_light_2" />
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="50dp"
+            android:id="@+id/bottle"
+            android:background="@drawable/can"
+            android:layout_above="@+id/img_banana_layer_1"
+            android:layout_alignRight="@+id/img_banana_layer_1"
+            android:layout_alignEnd="@+id/img_banana_layer_1" />
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="40dp"
+            android:id="@+id/imageView5"
+            android:background="@drawable/bottle"
+            android:layout_alignBottom="@+id/bone"
+            android:layout_toLeftOf="@+id/poster4"
+            android:layout_toStartOf="@+id/poster4" />
+
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="40dp"
+            android:id="@+id/cupandstraw"
+            android:background="@drawable/cupandstraw"
+            android:layout_below="@+id/img_bench"
+            android:layout_toLeftOf="@+id/img_banana_layer_2"
+            android:layout_toStartOf="@+id/img_banana_layer_2" />
+
+        <ImageView
+            android:layout_width="73dp"
+            android:layout_height="50dp"
+            android:id="@+id/packet"
+            android:background="@drawable/packet"
+            android:layout_below="@+id/garbage2"
+            android:layout_alignRight="@+id/paper"
+            android:layout_alignEnd="@+id/paper" />
+
+        <ImageView
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/smoke1"
+            android:background="@drawable/animation_smoke"
+            android:layout_alignBottom="@+id/street_light_2"
+            android:layout_toLeftOf="@+id/poster1"
+            android:layout_toStartOf="@+id/poster1"
+            android:layout_marginBottom="30dp" />
+
+        <ImageView
+            android:layout_width="115dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/smoke2"
+            android:background="@drawable/animation_smoke"
+            android:layout_above="@+id/img_billboard_1"
+            android:layout_toRightOf="@+id/poster3"
+            android:layout_toEndOf="@+id/poster3" />
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="50dp"
+            android:id="@+id/shoes"
+            android:background="@drawable/shoes"
+            android:layout_alignTop="@+id/bottle"
+            android:layout_toRightOf="@+id/garbage1"
+            android:layout_toEndOf="@+id/garbage1"
+            android:layout_marginLeft="34dp"
+            android:layout_marginStart="34dp" />
+
+        <ImageView
+            android:layout_width="85dp"
+            android:layout_height="50dp"
+            android:id="@+id/bone"
+            android:background="@drawable/bone"
+            android:layout_below="@+id/img_bench"
+            android:layout_toLeftOf="@+id/imageView5"
+            android:layout_toStartOf="@+id/imageView5" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/tools_container"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
     </RelativeLayout>
 
     <RelativeLayout

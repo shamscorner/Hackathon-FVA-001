@@ -15,7 +15,6 @@ import android.widget.ImageButton;
 public class CustomDialogFragment extends Dialog {
 
     public Context c;
-    public Dialog d;
 
     public CustomDialogFragment(Activity a) {
         super(a);

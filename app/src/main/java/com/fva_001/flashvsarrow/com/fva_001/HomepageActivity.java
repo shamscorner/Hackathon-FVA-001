@@ -32,6 +32,10 @@ public class HomepageActivity extends AppCompatActivity {
 
         setContentView(R.layout.homepage);
 
+        background_music = MediaPlayer.create(HomepageActivity.this, R.raw.homepage_music);
+        background_music.start();
+        background_music.setLooping(true);
+
         //get the sound button and handle the listener
         final ToggleButton btn_sound_toggle = (ToggleButton)findViewById(R.id.btn_sound);
         btn_sound_toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -118,7 +122,7 @@ public class HomepageActivity extends AppCompatActivity {
             background_music.setLooping(true);
             background_music.start();
         }else{
-            background_music = MediaPlayer.create(HomepageActivity.this, R.raw.background_homepage_music);
+            background_music = MediaPlayer.create(HomepageActivity.this, R.raw.homepage_music);
             background_music.start();
             background_music.setLooping(true);
         }
@@ -131,6 +135,10 @@ public class HomepageActivity extends AppCompatActivity {
         if(background_music != null){
             if(music_playing == false){
                 background_music.start();
+            }else{
+                background_music = MediaPlayer.create(HomepageActivity.this, R.raw.homepage_music);
+                background_music.start();
+                background_music.setLooping(true);
             }
         }
     }

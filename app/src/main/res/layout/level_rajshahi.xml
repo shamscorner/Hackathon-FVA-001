@@ -144,8 +144,8 @@
 
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:id="@+id/img_dustbin"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
@@ -153,8 +153,8 @@
             android:background="@drawable/animation_dustbin"/>
 
         <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:id="@+id/img_banana_layer_1"
             android:background="@drawable/banana_layer1"
             android:layout_alignBottom="@+id/img_banana_layer_2"
@@ -164,8 +164,8 @@
             android:layout_marginEnd="89dp" />
 
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="30dp"
+            android:layout_width="40dp"
+            android:layout_height="25dp"
             android:id="@+id/img_banana_layer_2"
             android:background="@drawable/banana_layer2"
             android:layout_alignParentBottom="true"
@@ -173,6 +173,270 @@
             android:layout_toStartOf="@+id/img_dustbin"
             android:layout_marginRight="129dp"
             android:layout_marginEnd="129dp" />
+
+        <ImageButton
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/img_billboard_1"
+            android:background="@drawable/billboard2_bad"
+            android:layout_alignBottom="@+id/instruction"
+            android:layout_toStartOf="@+id/poster1"
+            android:layout_toLeftOf="@+id/poster1"
+            android:layout_below="@+id/street_light_2" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="90dp"
+            android:id="@+id/img_billboard_2"
+            android:background="@drawable/billboard1_bad"
+            android:layout_above="@+id/poster2"
+            android:layout_toRightOf="@+id/poster1"
+            android:layout_toEndOf="@+id/poster1" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:id="@+id/img_bench"
+            android:background="@drawable/bench"
+            android:layout_alignTop="@+id/img_dustbin"
+            android:layout_toRightOf="@+id/cupandstraw"
+            android:layout_toEndOf="@+id/cupandstraw" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/poster1"
+            android:background="@drawable/poster1"
+            android:layout_below="@+id/img_billboard_1"
+            android:layout_toRightOf="@+id/img_bench"
+            android:layout_toEndOf="@+id/img_bench" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="25dp"
+            android:id="@+id/poster2"
+            android:background="@drawable/poster2"
+            android:layout_alignBottom="@+id/poster1"
+            android:layout_toRightOf="@+id/poster1"
+            android:layout_toEndOf="@+id/poster1" />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/poster4"
+            android:background="@drawable/poster4"
+            android:layout_alignTop="@+id/poster2"
+            android:layout_toLeftOf="@+id/poster3"
+            android:layout_toStartOf="@+id/poster3" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:id="@+id/poster3"
+            android:background="@drawable/poster3"
+            android:layout_alignBottom="@+id/poster2"
+            android:layout_alignRight="@+id/img_billboard_2"
+            android:layout_alignEnd="@+id/img_billboard_2" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="25dp"
+            android:id="@+id/poster5"
+            android:background="@drawable/poster5"
+            android:layout_below="@+id/instruction"
+            android:layout_toLeftOf="@+id/cupandstraw"
+            android:layout_toStartOf="@+id/cupandstraw" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="35dp"
+            android:id="@+id/tap"
+            android:background="@drawable/animation_water_tap"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/img_dustbin"
+            android:layout_toStartOf="@+id/img_dustbin" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/street_light_1"
+            android:background="@drawable/street_signal1"
+            android:layout_marginBottom="14dp"
+            android:layout_above="@+id/light1"
+            android:layout_toRightOf="@+id/book_shop"
+            android:layout_toEndOf="@+id/book_shop" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/street_light_2"
+            android:background="@drawable/street_signal2"
+            android:layout_above="@+id/light2"
+            android:layout_toLeftOf="@+id/img_banana_layer_1"
+            android:layout_toStartOf="@+id/img_banana_layer_1" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/book_shop"
+            android:background="@drawable/book_shop"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/street_light_2"
+            android:layout_toEndOf="@+id/street_light_2" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/direction"
+            android:background="@drawable/direction"
+            android:layout_below="@+id/book_shop"
+            android:layout_toLeftOf="@+id/poster5"
+            android:layout_toStartOf="@+id/poster5" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="20dp"
+            android:id="@+id/instruction"
+            android:background="@drawable/instruction"
+            android:layout_below="@+id/direction"
+            android:layout_alignLeft="@+id/direction"
+            android:layout_alignStart="@+id/direction" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/instruction2"
+            android:background="@drawable/instruction"
+            android:layout_above="@+id/poster1"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="26dp"
+            android:layout_marginStart="26dp" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="20dp"
+            android:id="@+id/light1"
+            android:background="@drawable/light1_1"
+            android:layout_above="@+id/street_light_2"
+            android:layout_toRightOf="@+id/light2"
+            android:layout_toEndOf="@+id/light2" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="10dp"
+            android:id="@+id/light2"
+            android:background="@drawable/light2_1"
+            android:layout_above="@+id/book_shop"
+            android:layout_toLeftOf="@+id/garbage2"
+            android:layout_toStartOf="@+id/garbage2" />
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:id="@+id/garbage1"
+            android:background="@drawable/garbage1"
+            android:layout_above="@+id/shoes"
+            android:layout_alignRight="@+id/instruction2"
+            android:layout_alignEnd="@+id/instruction2" />
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="20dp"
+            android:id="@+id/garbage2"
+            android:background="@drawable/garbage2"
+            android:layout_alignTop="@+id/garbage1"
+            android:layout_toLeftOf="@+id/street_light_2"
+            android:layout_toStartOf="@+id/street_light_2" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:id="@+id/paper"
+            android:background="@drawable/paper"
+            android:layout_below="@+id/garbage2"
+            android:layout_alignRight="@+id/garbage2"
+            android:layout_alignEnd="@+id/garbage2" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="15dp"
+            android:id="@+id/bottle"
+            android:background="@drawable/can"
+            android:layout_above="@+id/img_banana_layer_2"
+            android:layout_toRightOf="@+id/street_light_1"
+            android:layout_toEndOf="@+id/street_light_1" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="15dp"
+            android:id="@+id/imageView5"
+            android:background="@drawable/bottle"
+            android:layout_above="@+id/img_banana_layer_2"
+            android:layout_toRightOf="@+id/img_bench"
+            android:layout_toEndOf="@+id/img_bench" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:id="@+id/cupandstraw"
+            android:background="@drawable/cupandstraw"
+            android:layout_below="@+id/img_bench"
+            android:layout_centerHorizontal="true" />
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="15dp"
+            android:id="@+id/packet"
+            android:background="@drawable/packet"
+            android:layout_below="@+id/garbage2"
+            android:layout_alignRight="@+id/img_banana_layer_1"
+            android:layout_alignEnd="@+id/img_banana_layer_1" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/smoke1"
+            android:background="@drawable/animation_smoke"
+            android:layout_above="@+id/img_billboard_2"
+            android:layout_alignRight="@+id/imageView5"
+            android:layout_alignEnd="@+id/imageView5" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/smoke2"
+            android:background="@drawable/animation_smoke"
+            android:layout_alignBottom="@+id/street_light_2"
+            android:layout_alignLeft="@+id/img_dustbin"
+            android:layout_alignStart="@+id/img_dustbin" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:id="@+id/shoes"
+            android:background="@drawable/shoes"
+            android:layout_alignTop="@+id/img_banana_layer_1"
+            android:layout_toRightOf="@+id/light1"
+            android:layout_toEndOf="@+id/light1" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="15dp"
+            android:id="@+id/bone"
+            android:background="@drawable/bone"
+            android:layout_below="@+id/img_bench"
+            android:layout_alignRight="@+id/img_banana_layer_2"
+            android:layout_alignEnd="@+id/img_banana_layer_2" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/tools_container"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -195,13 +459,14 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="20dp"
-            android:text="@string/hint"
+            android:text="@string/tools"
             android:id="@+id/button3"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             style="@style/btn_wood"
-            android:background="#5A2C23"/>
+            android:background="#5A2C23"
+            android:onClick="showTools"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -261,7 +526,10 @@
             android:layout_alignBottom="@+id/linearLayout2"
             android:layout_toRightOf="@+id/btn_map_in_level"
             android:layout_toEndOf="@+id/btn_map_in_level"
-            android:layout_marginLeft="8dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="4dp"
             style="@style/btn_wood"
             android:background="#5A2C23"/>
     </RelativeLayout>

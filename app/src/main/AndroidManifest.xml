@@ -15,7 +15,10 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="landscape"
             android:configChanges="orientation|keyboardHidden">
-
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
         </activity>
 
         <activity
@@ -52,10 +55,7 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="landscape"
             android:configChanges="orientation|keyboardHidden">
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
+
         </activity>
         <activity
             android:name=".SeekStoreroom"

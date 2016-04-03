@@ -26,7 +26,7 @@ public class About extends AppCompatActivity {
         overridePendingTransition(R.anim.slide_up, R.anim.fade_out);
 
         //set the background music
-        background_music = MediaPlayer.create(About.this, R.raw.background_homepage_music);
+        background_music = MediaPlayer.create(About.this, R.raw.homepage_music);
         background_music.start();
         background_music.setLooping(true);
     }
@@ -38,7 +38,7 @@ public class About extends AppCompatActivity {
             background_music.setLooping(true);
             background_music.start();
         }else{
-            background_music = MediaPlayer.create(About.this, R.raw.background_homepage_music);
+            background_music = MediaPlayer.create(About.this, R.raw.homepage_music);
             background_music.start();
             background_music.setLooping(true);
         }
@@ -50,6 +50,10 @@ public class About extends AppCompatActivity {
         //play the background music
         if(background_music != null){
             background_music.start();
+        }else{
+            background_music = MediaPlayer.create(About.this, R.raw.homepage_music);
+            background_music.start();
+            background_music.setLooping(true);
         }
     }
     @Override
