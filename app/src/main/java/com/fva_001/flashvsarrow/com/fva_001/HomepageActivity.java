@@ -33,7 +33,12 @@ public class HomepageActivity extends AppCompatActivity {
         setContentView(R.layout.homepage);
 
         background_music = MediaPlayer.create(HomepageActivity.this, R.raw.homepage_music);
-        background_music.start();
+        background_music.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                background_music.start();
+            }
+        });
         background_music.setLooping(true);
 
         //get the sound button and handle the listener
@@ -123,7 +128,12 @@ public class HomepageActivity extends AppCompatActivity {
             background_music.start();
         }else{
             background_music = MediaPlayer.create(HomepageActivity.this, R.raw.homepage_music);
-            background_music.start();
+            background_music.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                @Override
+                public void onPrepared(MediaPlayer mp) {
+                    background_music.start();
+                }
+            });
             background_music.setLooping(true);
         }
 
@@ -137,7 +147,12 @@ public class HomepageActivity extends AppCompatActivity {
                 background_music.start();
             }else{
                 background_music = MediaPlayer.create(HomepageActivity.this, R.raw.homepage_music);
-                background_music.start();
+                background_music.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                    @Override
+                    public void onPrepared(MediaPlayer mp) {
+                        background_music.start();
+                    }
+                });
                 background_music.setLooping(true);
             }
         }

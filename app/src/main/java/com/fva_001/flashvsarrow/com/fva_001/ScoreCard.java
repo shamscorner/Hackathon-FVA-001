@@ -5,12 +5,13 @@ package com.fva_001.flashvsarrow.com.fva_001;
  */
 public class ScoreCard {
     //all variable and constant here...
-    private int pollutionRate, unorganizedRate, riskRate, score, finalScore;
+    private int pollutionRate = 100, unorganizedRate = 100, riskRate = 100, score, finalScore;
     private int noOfPollutedTask, noOFUnorganizedTask, taskCompleted, toolsUsed;
     private int pollutionFracktion, unorganizedFracktion;
-    private String time;
+    private long time;
 
     // all constructor here...
+    public ScoreCard(){}
     public ScoreCard(int noOfPollutedTask, int noOFUnorganizedTask){
         this.noOfPollutedTask = noOfPollutedTask;
         this.noOFUnorganizedTask = noOFUnorganizedTask;
@@ -95,6 +96,8 @@ public class ScoreCard {
         finalScore = x;
     }
     public int getFinalScore(){
+        int x = new CustomAdapter().getToolsUsedNo();
+        finalScore = getPollutionScore()+getUnorganizedScore()+getRiskScore()+getTaskCompleted()*5+x*5+getScore()+(int)((90-getTime())*10);
         return finalScore;
     }
 
@@ -112,10 +115,10 @@ public class ScoreCard {
         return toolsUsed;
     }
 
-    public void setTime(String s){
+    public void setTime(long s){
         time = s;
     }
-    public String getTime(){
+    public long getTime(){
         return time;
     }
 
@@ -135,4 +138,15 @@ public class ScoreCard {
     public void decreaseScore(int x){
         score = score - x;
     }
+
+    public int getPollutionScore(){
+        return ((100-pollutionRate)*10);
+    }
+    public int getUnorganizedScore(){
+        return ((100-unorganizedRate)*10);
+    }
+    public int getRiskScore(){
+        return ((100-riskRate)*20);
+    }
+
 }

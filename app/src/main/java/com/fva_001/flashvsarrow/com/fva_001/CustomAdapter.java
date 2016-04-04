@@ -20,6 +20,7 @@ public class CustomAdapter extends BaseAdapter {
     int[] imgId;
     private static LayoutInflater inflater = null;
     private static int posiitonVal;
+    private static int tools = 0;
 
     public CustomAdapter(){}
     public CustomAdapter(Context c, String[] result, int[] imgId){
@@ -46,6 +47,9 @@ public class CustomAdapter extends BaseAdapter {
     public int getPosition(){
         return posiitonVal;
     }
+    public int getToolsUsedNo(){
+        return tools;
+    }
 
     public class Holder{
         TextView txt;
@@ -70,6 +74,7 @@ public class CustomAdapter extends BaseAdapter {
             public void onClick(View v) {
                 new ButtonClick(c, v);
                 posiitonVal = position;
+                ++tools;
             }
         });
         return rowView;

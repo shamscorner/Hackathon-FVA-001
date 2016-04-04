@@ -239,7 +239,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="1:20"
                 android:id="@+id/elapsed_time"
                 android:layout_marginEnd="20dp"
                 android:layout_marginRight="20dp"
@@ -292,7 +291,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="1:20"
                 android:id="@+id/task_no"
                 android:layout_marginEnd="20dp"
                 android:layout_marginRight="20dp"
@@ -345,7 +343,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="1:20"
                 android:id="@+id/tools_used_no"
                 android:layout_marginEnd="20dp"
                 android:layout_marginRight="20dp"
@@ -466,13 +463,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <RatingBar
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/gamer_rating_completed"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true" />
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -480,14 +470,36 @@
                 android:text="@string/new_high_score"
                 android:textColor="@color/wooden_text"
                 android:textStyle="bold"
+                android:textSize="32sp"
                 android:id="@+id/text_high_score"
+                android:layout_alignParentBottom="true"
                 android:background="@drawable/rounded_transparent"
-                android:layout_alignBottom="@+id/gamer_rating_completed"
-                android:layout_toRightOf="@+id/gamer_rating_completed"
-                android:layout_toEndOf="@+id/gamer_rating_completed"
-                android:layout_marginLeft="59dp"
-                android:layout_marginStart="59dp"
-                android:textSize="30sp"/>
+                android:layout_centerHorizontal="true" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/text_high_score"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:id="@+id/rating1"
+                    android:background="@drawable/star"/>
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:id="@+id/rating2"
+                    android:background="@drawable/star" />
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:id="@+id/rating3"
+                    android:background="@drawable/star" />
+            </LinearLayout>
         </RelativeLayout>
 
     </LinearLayout>

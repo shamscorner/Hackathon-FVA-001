@@ -2,8 +2,8 @@ package com.fva_001.flashvsarrow.com.fva_001;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
@@ -14,7 +14,9 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.DecelerateInterpolator;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.HashMap;
@@ -33,6 +35,15 @@ public class LevelCompleted extends AppCompatActivity {
     long time = 5000;
     int i = 1;
     private MediaPlayer mplayer;
+
+    ProgressBar proPollution, proUnorganized, proRisk;
+    TextView percentPol, percentUn, percentRisk, polScore, unScore, riskScore, elapsedTime, timeScore, taskCompleted, taskCompletedScore,
+            toolsUsed, toolsUsedScore, score, finalScore, highScoreTag;
+    ImageView imgRating1, imgRating2, imgRating3;
+
+    //for storing the data value
+    private SharedPreferences pref;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -43,6 +54,9 @@ public class LevelCompleted extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.level_completed);
+
+        //initialize the sharedpreferences file
+        pref = getApplicationContext().getSharedPreferences("core_fva", MODE_PRIVATE);
 
         //initialize the animations
         animSlideup = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_up);
@@ -69,6 +83,7 @@ public class LevelCompleted extends AppCompatActivity {
 
         ////////////// Sound/////////
         mplayer = MediaPlayer.create(LevelCompleted.this, R.raw.score_sound);
+        mplayer.setOnCompletionListener(new MediaPlayerRelease());
         mplayer.start();
 
         int delay;
@@ -105,6 +120,50 @@ public class LevelCompleted extends AppCompatActivity {
         objDivider.startAnimation(animFadein);
         objAnimFinal.startAnimation(animFadein);
 
+        // get the object for the scoring
+        ScoreCard scoreCard = new ScoreCard();
+
+        //initialize all the view and resource
+        proPollution = (ProgressBar)findViewById(R.id.progressbar_pollution_completed);
+        proPollution.setProgress(pref.getInt("PERCENT_POL", 0));
+        proUnorganized = (ProgressBar)findViewById(R.id.progressbar_unorganized_completed);
+        proUnorganized.setProgress(pref.getInt("PERCENT_UN", 0));
+        proRisk = (ProgressBar)findViewById(R.id.progressbar_risk_completed);
+        proRisk.setProgress(pref.getInt("PERCENT_RISK", 0));
+
+        percentPol = (TextView)findViewById(R.id.percent_poll);
+        percentPol.setText(pref.getInt("PERCENT_POL", 0) + "%");
+        percentUn = (TextView)findViewById(R.id.percent_unorg);
+        percentUn.setText(pref.getInt("PERCENT_UN", 0)+"%");
+        percentRisk = (TextView)findViewById(R.id.percent_risk);
+        percentRisk.setText(pref.getInt("PERCENT_RISK", 0)+"%");
+        polScore = (TextView)findViewById(R.id.pollution_score);
+        polScore.setText("" +pref.getInt("SCORE_POL", 0));
+        unScore = (TextView)findViewById(R.id.unorganized_score);
+        unScore.setText(""+pref.getInt("SCORE_UN", 0));
+        riskScore = (TextView)findViewById(R.id.risk_score);
+        riskScore.setText(""+pref.getInt("SCORE_RISK", 0));
+        elapsedTime = (TextView)findViewById(R.id.elapsed_time);
+        elapsedTime.setText(pref.getString("TIME", ""));
+        timeScore = (TextView)findViewById(R.id.elapsed_time_score);
+        timeScore.setText(""+pref.getLong("TIME_SCORE", 0));
+        taskCompleted = (TextView)findViewById(R.id.task_no);
+        taskCompleted.setText(""+pref.getInt("TASK_COMPLETED", 0));
+        taskCompletedScore = (TextView)findViewById(R.id.task_no_score);
+        taskCompletedScore.setText(""+pref.getInt("TASK_SCORE", 0));
+        toolsUsed = (TextView)findViewById(R.id.tools_used_no);
+        toolsUsed.setText(""+pref.getInt("TOOLS", 0));
+        toolsUsedScore = (TextView)findViewById(R.id.tools_used_no_score);
+        toolsUsedScore.setText(""+pref.getInt("TOOLS_SCORE", 0));
+        score = (TextView)findViewById(R.id.score_completed);
+        score.setText(""+pref.getInt("SCORE", 0));
+        finalScore = (TextView)findViewById(R.id.final_score);
+        finalScore.setText(""+pref.getInt("FINAL_SCORE", 0));
+        highScoreTag = (TextView)findViewById(R.id.text_high_score);
+
+        imgRating1 = (ImageView)findViewById(R.id.rating1);
+        imgRating2 = (ImageView)findViewById(R.id.rating2);
+        imgRating3 = (ImageView)findViewById(R.id.rating3);
     }
     public void goHomeCompleted(View v){
         new ButtonClick(getApplicationContext(), v);

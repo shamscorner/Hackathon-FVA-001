@@ -3,6 +3,7 @@ package com.fva_001.flashvsarrow.com.fva_001;
 import android.annotation.TargetApi;
 import android.content.ClipData;
 import android.content.ClipDescription;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
 import android.media.MediaPlayer;
@@ -21,8 +22,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
+import java.text.SimpleDateFormat;
 
 /**
  * Created by ShamimH on 23-Mar-16.
@@ -40,6 +40,15 @@ public class LevelRajshahi  extends AppCompatActivity {
     private int taskTotal, taskPollution, taskUnorganized;
     private String type = "";
     private Animation animFadeOut;
+    private long countTime = 0;
+    private int min, sec, countTimeInMill = 90000;
+
+    //for storing the data value
+    private SharedPreferences pref;
+    private SharedPreferences.Editor editor;
+
+    private SimpleDateFormat dateFormat = new SimpleDateFormat("hh:mm:ss a");
+    private android.os.Handler txtvHandler;
 
     private ScoreCard scoreCard;
 
@@ -53,6 +62,10 @@ public class LevelRajshahi  extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.level_rajshahi); //set the content view
+
+        //initialize the sharedpreferences file
+        pref = getApplicationContext().getSharedPreferences("core_fva", MODE_PRIVATE);
+        editor = pref.edit();
 
         //initialization of all music
         background_music = MediaPlayer.create(getApplicationContext(), R.raw.background_homepage_music);
@@ -158,7 +171,7 @@ public class LevelRajshahi  extends AppCompatActivity {
         scoreCard = new ScoreCard(taskPollution, taskUnorganized);
 
         //counting the countdown
-        scoreCard.setTime("1:20");
+        scoreCard.setTime(countTime);
 
         //set all the value for this level
         updateScore();
@@ -231,6 +244,34 @@ public class LevelRajshahi  extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
             imgDustbin.setOnDragListener(new DustbinDragListener());
         }
+
+        txtvHandler = new android.os.Handler();
+        Runnable textViewTimerTask = new Runnable() {
+            @Override
+            public void run() {
+                //txtTime.setText(dateFormat.format(new Date()));
+                min = countTimeInMill / 60000;
+                sec = (countTimeInMill / 1000) % 60;
+                countTimeInMill = countTimeInMill - 1000;
+                ++countTime;
+                String str = String.format("%d:%02d", min, sec);
+                txtTime.setText(str);
+                txtvHandler.postDelayed(this, 1000);
+            }
+        };
+        txtvHandler.postDelayed(textViewTimerTask, 0);
+
+        //start another activity after some specific time period
+        android.os.Handler handler = new android.os.Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                scoreCard.setTime(countTime);
+                storeDataSave();
+                DialogLevelEnd dialogLevelEnd = new DialogLevelEnd(LevelRajshahi.this);
+                dialogLevelEnd.show();
+            }
+        }, 90000L);
     }
     private void updateScore(){
         //set all values to the layout
@@ -240,10 +281,15 @@ public class LevelRajshahi  extends AppCompatActivity {
         txtPollution.setText(scoreCard.getPollutionRate() + "%");
         txtUnorganized.setText(scoreCard.getUnorganizedRate()+"%");
         txtRisk.setText(scoreCard.getRiskRate()+"%");
-        txtTime.setText(scoreCard.getTime());
         txtScore.setText(""+scoreCard.getScore());
         txtTask.setText(""+scoreCard.getTaskCompleted());
-        txtTaskRemain.setText(""+(taskTotal - scoreCard.getTaskCompleted()));
+        txtTaskRemain.setText("" + (taskTotal - scoreCard.getTaskCompleted()));
+        if(scoreCard.getTaskCompleted() == taskTotal){
+            scoreCard.setTime(countTime);
+            storeDataSave();
+            MadeIt madeit = new MadeIt(LevelRajshahi.this);
+            madeit.show();
+        }
     }
 
     //handle the back button
@@ -588,6 +634,29 @@ public class LevelRajshahi  extends AppCompatActivity {
             return true;
         }
     }
+
+    //save to the pref file
+    private void storeDataSave(){
+        editor.putInt("PERCENT_POL", scoreCard.getPollutionRate());
+        editor.putInt("PERCENT_UN", scoreCard.getUnorganizedRate());
+        editor.putInt("PERCENT_RISK", scoreCard.getRiskRate());
+        editor.putInt("SCORE_POL", scoreCard.getPollutionScore());
+        editor.putInt("SCORE_UN", scoreCard.getUnorganizedScore());
+        editor.putInt("SCORE_RISK", scoreCard.getRiskScore());
+        editor.putInt("TASK_COMPLETED", scoreCard.getTaskCompleted());
+        editor.putInt("TASK_SCORE", scoreCard.getTaskCompleted()*5);
+        editor.putInt("TOOLS", new CustomAdapter().getToolsUsedNo());
+        editor.putInt("TOOLS_SCORE", new CustomAdapter().getToolsUsedNo()*5);
+        editor.putInt("SCORE", scoreCard.getScore());
+        editor.putInt("FINAL_SCORE", scoreCard.getFinalScore());
+        int min = (int) (countTime / 60);
+        int sec = (int) (countTime % 60);
+        String str = String.format("%d:%02d", min, sec);
+        editor.putString("TIME", str);
+        editor.putLong("TIME_SCORE", (90-countTime)*10);
+        editor.commit();
+    }
+
     @Override
     protected void onStart() {
         super.onStart();
