@@ -12,16 +12,18 @@
         android:layout_alignParentBottom="true" />
 
     <TextView
-        android:layout_width="250dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/text_introman"
         android:layout_alignTop="@+id/image_intro_man"
         android:layout_toRightOf="@+id/image_intro_man"
         android:layout_toEndOf="@+id/image_intro_man"
         android:layout_marginTop="3dp"
-        android:background="@drawable/rounded_transparent"
-        android:textColor="#FBBE9B"
-        android:textSize="12sp"/>
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:background="@drawable/rounded_white"
+        android:textColor="#43334e"
+        android:textSize="16sp"/>
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -32,7 +34,7 @@
         android:layout_below="@+id/text_introman"
         android:layout_alignRight="@+id/text_introman"
         android:layout_alignEnd="@+id/text_introman"
-        android:textColor="#FBBE9B"
+        android:textColor="#fff"
         android:background="#00000000"
         android:onClick="textNext"/>
 
@@ -47,7 +49,7 @@
         android:layout_toStartOf="@+id/btn_next"
         android:layout_marginEnd="5dp"
         android:layout_marginRight="5dp"
-        android:textColor="#FBBE9B"
+        android:textColor="#fff"
         android:background="#00000000"
         android:onClick="textSkip"
         />
@@ -77,7 +79,8 @@
                 android:id="@+id/textView5"
                 android:layout_gravity="center"
                 android:gravity="center"
-                style="@style/btn_wood"/>
+                style="@style/btn_wood"
+                android:textSize="40sp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -86,7 +89,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal">
 
-            <Button
+            Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

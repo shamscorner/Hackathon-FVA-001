@@ -24,9 +24,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import java.text.SimpleDateFormat;
 
-/**
- * Created by ShamimH on 23-Mar-16.
- */
 public class LevelRajshahi  extends AppCompatActivity {
 
     private Button btnMap;
@@ -41,7 +38,7 @@ public class LevelRajshahi  extends AppCompatActivity {
     private String type = "";
     private Animation animFadeOut;
     private long countTime = 0;
-    private int min, sec, countTimeInMill = 90000;
+    private int min, sec, countTimeInMill = 30000, time;
 
     //for storing the data value
     private SharedPreferences pref;
@@ -51,6 +48,7 @@ public class LevelRajshahi  extends AppCompatActivity {
     private android.os.Handler txtvHandler;
 
     private ScoreCard scoreCard;
+    private int highScore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +64,7 @@ public class LevelRajshahi  extends AppCompatActivity {
         //initialize the sharedpreferences file
         pref = getApplicationContext().getSharedPreferences("core_fva", MODE_PRIVATE);
         editor = pref.edit();
+        highScore = pref.getInt("FINAL_SCORE", 0);
 
         //initialization of all music
         background_music = MediaPlayer.create(getApplicationContext(), R.raw.background_homepage_music);
@@ -170,9 +169,6 @@ public class LevelRajshahi  extends AppCompatActivity {
         //initialize the score class
         scoreCard = new ScoreCard(taskPollution, taskUnorganized);
 
-        //counting the countdown
-        scoreCard.setTime(countTime);
-
         //set all the value for this level
         updateScore();
 
@@ -253,7 +249,7 @@ public class LevelRajshahi  extends AppCompatActivity {
                 min = countTimeInMill / 60000;
                 sec = (countTimeInMill / 1000) % 60;
                 countTimeInMill = countTimeInMill - 1000;
-                ++countTime;
+                countTime++;
                 String str = String.format("%d:%02d", min, sec);
                 txtTime.setText(str);
                 txtvHandler.postDelayed(this, 1000);
@@ -266,12 +262,13 @@ public class LevelRajshahi  extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                scoreCard.setTime(countTime);
+                time = (int) countTime;
+                scoreCard.setTime(time);
                 storeDataSave();
-                DialogLevelEnd dialogLevelEnd = new DialogLevelEnd(LevelRajshahi.this);
+                DialogLevelEnd dialogLevelEnd = new DialogLevelEnd(LevelRajshahi.this, highScore);
                 dialogLevelEnd.show();
             }
-        }, 90000L);
+        }, 30000L);
     }
     private void updateScore(){
         //set all values to the layout
@@ -285,9 +282,10 @@ public class LevelRajshahi  extends AppCompatActivity {
         txtTask.setText(""+scoreCard.getTaskCompleted());
         txtTaskRemain.setText("" + (taskTotal - scoreCard.getTaskCompleted()));
         if(scoreCard.getTaskCompleted() == taskTotal){
-            scoreCard.setTime(countTime);
+            time = (int)countTime;
+            scoreCard.setTime(time);
             storeDataSave();
-            MadeIt madeit = new MadeIt(LevelRajshahi.this);
+            MadeIt madeit = new MadeIt(LevelRajshahi.this, highScore);
             madeit.show();
         }
     }
@@ -653,7 +651,7 @@ public class LevelRajshahi  extends AppCompatActivity {
         int sec = (int) (countTime % 60);
         String str = String.format("%d:%02d", min, sec);
         editor.putString("TIME", str);
-        editor.putLong("TIME_SCORE", (90-countTime)*10);
+        editor.putLong("TIME_SCORE", (30-time)*10);
         editor.commit();
     }
 
@@ -696,6 +694,7 @@ public class LevelRajshahi  extends AppCompatActivity {
             background_music.release();
             background_music = null;
         }
+        storeDataSave();
         super.onDestroy();
     }
 

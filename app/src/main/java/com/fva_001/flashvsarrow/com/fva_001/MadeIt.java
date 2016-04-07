@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 /**
  * Created by ShamimH on 05-Apr-16.
@@ -17,11 +18,13 @@ import android.widget.ImageView;
 public class MadeIt extends Dialog {
 
     public Context c;
+    private int highScore;
 
-    public MadeIt(Activity a) {
+    public MadeIt(Activity a, int highScore) {
         super(a);
         // TODO Auto-generated constructor stub
         this.c = a.getApplicationContext();
+        this.highScore = highScore;
     }
 
     @Override
@@ -33,6 +36,9 @@ public class MadeIt extends Dialog {
 
         setCancelable(false);
         setCanceledOnTouchOutside(false);
+
+        TextView txtHeader = (TextView)findViewById(R.id.textView);
+        txtHeader.setText("You made it");
 
         ImageView timeview = (ImageView)findViewById(R.id.imageView2);
         timeview.setBackgroundResource(R.drawable.made_it);
@@ -49,6 +55,7 @@ public class MadeIt extends Dialog {
                 Intent intent = new Intent(getContext(), LevelCompleted.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra("HIGH_SCORE", highScore);
                 c.startActivity(intent);
                 dismiss();
             }

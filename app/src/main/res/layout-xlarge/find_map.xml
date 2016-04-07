@@ -79,7 +79,7 @@
         android:layout_toRightOf="@+id/image_intro_man_find_map"
         android:layout_toEndOf="@+id/image_intro_man_find_map"
         android:textColor="#fed7c6"
-        android:background="@drawable/rounded_transparent"
+        android:background="@drawable/rounded_white"
         android:textSize="36sp"/>
 
 

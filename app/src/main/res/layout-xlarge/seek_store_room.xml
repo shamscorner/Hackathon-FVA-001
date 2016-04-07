@@ -12,16 +12,18 @@
         android:layout_alignParentBottom="true" />
 
     <TextView
-        android:layout_width="570dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/text_introman"
         android:layout_alignTop="@+id/image_intro_man"
         android:layout_toRightOf="@+id/image_intro_man"
         android:layout_toEndOf="@+id/image_intro_man"
         android:layout_marginTop="80dp"
-        android:background="@drawable/rounded_transparent"
-        android:textColor="#FBBE9B"
-        android:textSize="22sp"/>
+        android:background="@drawable/rounded_white"
+        android:textColor="#43334e"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="38sp"/>
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -35,7 +37,7 @@
         android:textColor="#FBBE9B"
         android:background="#00000000"
         android:onClick="textNext"
-        android:textSize="30sp"/>
+        android:textSize="38sp"/>
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -51,7 +53,7 @@
         android:textColor="#FBBE9B"
         android:background="#00000000"
         android:onClick="textSkip"
-        android:textSize="30sp"
+        android:textSize="38sp"
         />
 
     <LinearLayout
@@ -79,7 +81,7 @@
                 android:id="@+id/textView5"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:textSize="50sp"
+                android:textSize="80sp"
                 style="@style/btn_wood"/>
         </LinearLayout>
 
@@ -89,7 +91,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal">
 
-            <Button
+            Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"

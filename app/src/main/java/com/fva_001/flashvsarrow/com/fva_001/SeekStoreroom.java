@@ -23,9 +23,9 @@ public class SeekStoreroom extends AppCompatActivity {
     private int phase = 0;
     private String[] text = new String[7];
 
-    Button btn_skip, btn_next, btn_go_store;
+    Button btn_skip, btn_next;
 
-    LinearLayout storeHolder;
+    LinearLayout storeHolder, btn_go_store_layout;
 
     Animation animFadein, animSlideup, animFadeout;
 
@@ -54,12 +54,13 @@ public class SeekStoreroom extends AppCompatActivity {
         textIntro.startAnimation(animFadein);
 
         //set the intro nam text
-        text[0] = "Hello, Shamim ! I think you have already known a lot of stuff on our bad side of the environment. And I think you do not forget the good side of the beautiful environment in our world.";
-        text[1] = "But who actually responsible for that? Why our beautiful cities are  turning into something like hell. What do you think about that Shamim?";
-        text[2] = "Of course, we are. And you are also a part of it. You are also responsible for all kind of things that are related to this bad side of our environment.";
+        text[0] = "Hello ! I think you have already known a lot of stuff on our worst side of the environment. And I think you do not forget the best part of out environment too.";
+        text[1] = "But who actually responsible for that? Why our beautiful cities are turning into something like hell? What do you think about that ?";
+        text[2] = "Of course, we are. And you are also a part of it. You are also responsible for all kind of things that are related to this worst side of our beautiful environment.";
         text[3] = "So it's time for you to think something better, to make something better  to save our world and also the existence of mankind. ";
         text[4] = "Don't worry. You are not on your own. I will always be on your side.";
         text[5] = "If you are ready, then let's get started.";
+        text[6] = "You have to find a map to explore so go to your store room";
 
         //set the default text
         textIntro.setText(text[0]);
@@ -72,8 +73,8 @@ public class SeekStoreroom extends AppCompatActivity {
         storeHolder.setVisibility(View.INVISIBLE);
 
         // go to store room
-        btn_go_store = (Button)findViewById(R.id.btn_go_to_store_room);
-        btn_go_store.setOnClickListener(new View.OnClickListener() {
+        btn_go_store_layout = (LinearLayout)findViewById(R.id.go_to_store_holder);
+        btn_go_store_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 new ButtonClick(getApplicationContext(), v);
@@ -85,7 +86,7 @@ public class SeekStoreroom extends AppCompatActivity {
 
     public void textNext(View v){
         phase++;
-        if(phase > 5){
+        if(phase > 6){
             v.setVisibility(View.INVISIBLE);
             btn_skip.setVisibility(View.INVISIBLE);
             textIntro.setVisibility(View.INVISIBLE);
@@ -99,10 +100,10 @@ public class SeekStoreroom extends AppCompatActivity {
     }
 
     public void textSkip(View v){
-        textIntro.setText(text[5]);
+        textIntro.setText(text[6]);
         textIntro.startAnimation(animFadein);
         v.setEnabled(false);
-        phase = 5;
+        phase = 6;
     }
 
     // handle the go back function

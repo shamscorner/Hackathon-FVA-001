@@ -9,8 +9,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 /**
  * Created by ShamimH on 04-Apr-16.
@@ -18,11 +20,13 @@ import android.widget.ImageView;
 public class DialogLevelEnd extends Dialog {
 
     public Context c;
+    int highScore;
 
-    public DialogLevelEnd(Activity a) {
+    public DialogLevelEnd(Activity a, int highScore) {
         super(a);
         // TODO Auto-generated constructor stub
         this.c = a.getApplicationContext();
+        this.highScore = highScore;
     }
 
     @Override
@@ -34,6 +38,9 @@ public class DialogLevelEnd extends Dialog {
 
         setCancelable(false);
         setCanceledOnTouchOutside(false);
+
+        TextView txtHeader = (TextView)findViewById(R.id.textView);
+        txtHeader.setText("Times Up");
 
         ImageView timeview = (ImageView)findViewById(R.id.imageView2);
         timeview.setBackgroundResource(R.drawable.time_up);
@@ -50,6 +57,7 @@ public class DialogLevelEnd extends Dialog {
                 Intent intent = new Intent(getContext(), LevelCompleted.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.putExtra("HIGH_SCORE", highScore);
                 c.startActivity(intent);
                 dismiss();
             }

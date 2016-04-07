@@ -4,27 +4,33 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.media.MediaPlayer;
+import android.media.MediaScannerConnection;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.DecelerateInterpolator;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by ShamimH on 24-Mar-16.
- */
 public class LevelCompleted extends AppCompatActivity {
 
     private LinearLayout headerHolder;
@@ -35,6 +41,10 @@ public class LevelCompleted extends AppCompatActivity {
     long time = 5000;
     int i = 1;
     private MediaPlayer mplayer;
+    //image
+    private Bitmap image;
+    //counter
+    private int counter = 0;
 
     ProgressBar proPollution, proUnorganized, proRisk;
     TextView percentPol, percentUn, percentRisk, polScore, unScore, riskScore, elapsedTime, timeScore, taskCompleted, taskCompletedScore,
@@ -120,9 +130,6 @@ public class LevelCompleted extends AppCompatActivity {
         objDivider.startAnimation(animFadein);
         objAnimFinal.startAnimation(animFadein);
 
-        // get the object for the scoring
-        ScoreCard scoreCard = new ScoreCard();
-
         //initialize all the view and resource
         proPollution = (ProgressBar)findViewById(R.id.progressbar_pollution_completed);
         proPollution.setProgress(pref.getInt("PERCENT_POL", 0));
@@ -160,11 +167,88 @@ public class LevelCompleted extends AppCompatActivity {
         finalScore = (TextView)findViewById(R.id.final_score);
         finalScore.setText(""+pref.getInt("FINAL_SCORE", 0));
         highScoreTag = (TextView)findViewById(R.id.text_high_score);
+        highScoreTag.setVisibility(View.INVISIBLE);
 
         imgRating1 = (ImageView)findViewById(R.id.rating1);
+        imgRating1.setVisibility(View.INVISIBLE);
         imgRating2 = (ImageView)findViewById(R.id.rating2);
+        imgRating2.setVisibility(View.INVISIBLE);
         imgRating3 = (ImageView)findViewById(R.id.rating3);
+        imgRating3.setVisibility(View.INVISIBLE);
+
+        int score = pref.getInt("FINAL_SCORE", 0);
+        if(score > 1500){
+            imgRating1.setVisibility(View.VISIBLE);
+            imgRating1.startAnimation(animFadein);
+        }
+        if(score > 2500){
+            imgRating2.setVisibility(View.VISIBLE);
+            imgRating2.startAnimation(animFadein);
+        }
+        if(score > 4000){
+            imgRating3.setVisibility(View.VISIBLE);
+            imgRating3.startAnimation(animFadein);
+        }
+        if(score > getIntent().getIntExtra("HIGH_SCORE", 0)){
+            highScoreTag.setVisibility(View.VISIBLE);
+        }
+
+        // the share in facebook button
+        ImageButton btnFacebook = (ImageButton)findViewById(R.id.btn_facebook);
+        btnFacebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new ButtonClick(getApplicationContext(), v);
+                takeScreenshot();
+            }
+        });
     }
+    //the share section
+    private void takeScreenshot() {
+        Date now = new Date();
+        android.text.format.DateFormat.format("yyyy-MM-dd_hh:mm:ss", now);
+
+        try {
+            // image naming and path  to include sd card  appending name you choose for file
+            String mPath = Environment.getExternalStorageDirectory().toString() + "/" + now + ".jpg";
+
+            // create bitmap screen capture
+            View v1 = getWindow().getDecorView().getRootView();
+            v1.setDrawingCacheEnabled(true);
+            Bitmap bitmap = Bitmap.createBitmap(v1.getDrawingCache());
+            v1.setDrawingCacheEnabled(false);
+            File imageFile = new File(mPath);
+            FileOutputStream outputStream = new FileOutputStream(imageFile);
+            int quality = 100;
+            bitmap.compress(Bitmap.CompressFormat.JPEG, quality, outputStream);
+            outputStream.flush();
+            outputStream.close();
+
+
+            MediaScannerConnection.scanFile(this,
+                    new String[]{imageFile.toString()}, null,
+                    new MediaScannerConnection.OnScanCompletedListener() {
+                        public void onScanCompleted(String path, Uri uri) {
+                            Log.i("ExternalStorage", "Scanned " + path + ":");
+                            Log.i("ExternalStorage", "-> uri=" + uri);
+                        }
+                    });
+
+            openScreenshot(imageFile);
+        } catch (Throwable e) {
+            // Several error may come out with file handling or OOM
+            e.printStackTrace();
+        }
+    }
+
+    private void openScreenshot(File imageFile) {
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        Uri uri = Uri.fromFile(imageFile);
+        intent.setDataAndType(uri, "image/*");
+        startActivity(intent);
+    }
+
     public void goHomeCompleted(View v){
         new ButtonClick(getApplicationContext(), v);
         GoHomepage go = new GoHomepage(LevelCompleted.this);

@@ -1,8 +1,5 @@
 package com.fva_001.flashvsarrow.com.fva_001;
 
-/**
- * Created by ShamimH on 01-Apr-16.
- */
 public class ScoreCard {
     //all variable and constant here...
     private int pollutionRate = 100, unorganizedRate = 100, riskRate = 100, score, finalScore;
@@ -97,7 +94,7 @@ public class ScoreCard {
     }
     public int getFinalScore(){
         int x = new CustomAdapter().getToolsUsedNo();
-        finalScore = getPollutionScore()+getUnorganizedScore()+getRiskScore()+getTaskCompleted()*5+x*5+getScore()+(int)((90-getTime())*10);
+        finalScore = getPollutionScore()+getUnorganizedScore()+getRiskScore()+getTaskCompleted()*5+x*5+getScore()+(int)((30-getTime())*10);
         return finalScore;
     }
 

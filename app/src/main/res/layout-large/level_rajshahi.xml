@@ -141,7 +141,7 @@
         android:background="@drawable/level_rajshahi">
 
         <ImageView
-            android:layout_width="180dp"
+            android:layout_width="160dp"
             android:layout_height="160dp"
             android:id="@+id/img_dustbin"
             android:layout_alignParentBottom="true"
@@ -154,11 +154,9 @@
             android:layout_height="60dp"
             android:id="@+id/img_banana_layer_1"
             android:background="@drawable/banana_layer1"
-            android:layout_alignBottom="@+id/img_banana_layer_2"
-            android:layout_toLeftOf="@+id/img_banana_layer_2"
-            android:layout_toStartOf="@+id/img_banana_layer_2"
-            android:layout_marginRight="89dp"
-            android:layout_marginEnd="89dp" />
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/packet"
+            android:layout_toStartOf="@+id/packet" />
 
         <ImageView
             android:layout_width="70dp"
@@ -176,53 +174,53 @@
             android:layout_height="120dp"
             android:id="@+id/img_billboard_1"
             android:background="@drawable/billboard2_bad"
-            android:layout_above="@+id/img_dustbin"
-            android:layout_toRightOf="@+id/img_banana_layer_1"
-            android:layout_toEndOf="@+id/img_banana_layer_1" />
+            android:layout_alignBottom="@+id/instruction2"
+            android:layout_alignLeft="@+id/poster5"
+            android:layout_alignStart="@+id/poster5" />
 
         <ImageView
             android:layout_width="220dp"
             android:layout_height="160dp"
             android:id="@+id/img_billboard_2"
             android:background="@drawable/billboard1_bad"
-            android:layout_above="@+id/img_dustbin"
-            android:layout_alignRight="@+id/poster3"
-            android:layout_alignEnd="@+id/poster3" />
+            android:layout_alignBottom="@+id/img_billboard_1"
+            android:layout_alignLeft="@+id/imageView5"
+            android:layout_alignStart="@+id/imageView5" />
 
         <ImageView
             android:layout_width="80dp"
             android:layout_height="50dp"
             android:id="@+id/img_bench"
             android:background="@drawable/bench"
-            android:layout_alignTop="@+id/garbage2"
-            android:layout_alignRight="@+id/img_billboard_1"
-            android:layout_alignEnd="@+id/img_billboard_1" />
+            android:layout_alignBottom="@+id/garbage2"
+            android:layout_toLeftOf="@+id/poster1"
+            android:layout_toStartOf="@+id/poster1" />
 
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:id="@+id/poster1"
             android:background="@drawable/poster1"
-            android:layout_below="@+id/instruction"
-            android:layout_alignLeft="@+id/bone"
-            android:layout_alignStart="@+id/bone" />
+            android:layout_below="@+id/img_billboard_2"
+            android:layout_toLeftOf="@+id/poster2"
+            android:layout_toStartOf="@+id/poster2" />
 
         <ImageView
             android:layout_width="50dp"
             android:layout_height="40dp"
             android:id="@+id/poster2"
             android:background="@drawable/poster2"
-            android:layout_below="@+id/instruction"
-            android:layout_alignLeft="@+id/imageView5"
-            android:layout_alignStart="@+id/imageView5" />
+            android:layout_above="@+id/packet"
+            android:layout_toLeftOf="@+id/poster4"
+            android:layout_toStartOf="@+id/poster4" />
         <ImageView
             android:layout_width="30dp"
             android:layout_height="40dp"
             android:id="@+id/poster4"
             android:background="@drawable/poster4"
-            android:layout_below="@+id/instruction"
-            android:layout_alignRight="@+id/tap"
-            android:layout_alignEnd="@+id/tap" />
+            android:layout_alignTop="@+id/poster2"
+            android:layout_toLeftOf="@+id/poster3"
+            android:layout_toStartOf="@+id/poster3" />
 
         <ImageView
             android:layout_width="50dp"
@@ -230,34 +228,34 @@
             android:id="@+id/poster3"
             android:background="@drawable/poster3"
             android:layout_alignBottom="@+id/poster4"
-            android:layout_toRightOf="@+id/poster4"
-            android:layout_toEndOf="@+id/poster4" />
+            android:layout_toLeftOf="@+id/img_dustbin"
+            android:layout_toStartOf="@+id/img_dustbin" />
 
         <ImageView
             android:layout_width="40dp"
             android:layout_height="50dp"
             android:id="@+id/poster5"
             android:background="@drawable/poster5"
-            android:layout_above="@+id/packet"
-            android:layout_alignRight="@+id/bottle"
-            android:layout_alignEnd="@+id/bottle" />
+            android:layout_alignTop="@+id/poster1"
+            android:layout_toRightOf="@+id/direction"
+            android:layout_toEndOf="@+id/direction" />
 
         <ImageView
             android:layout_width="65dp"
-            android:layout_height="75dp"
+            android:layout_height="105dp"
             android:id="@+id/tap"
             android:background="@drawable/animation_water_tap"
             android:layout_alignParentBottom="true"
             android:layout_toLeftOf="@+id/img_dustbin"
-            android:layout_toStartOf="@+id/img_dustbin" />
+            android:layout_toStartOf="@+id/img_dustbin"
+            android:layout_below="@+id/poster2" />
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:id="@+id/street_light_1"
             android:background="@drawable/street_signal1"
-            android:layout_marginBottom="37dp"
-            android:layout_above="@+id/img_billboard_2"
+            android:layout_above="@+id/light1"
             android:layout_alignRight="@+id/instruction"
             android:layout_alignEnd="@+id/instruction" />
 
@@ -266,18 +264,18 @@
             android:layout_height="45dp"
             android:id="@+id/street_light_2"
             android:background="@drawable/street_signal2"
-            android:layout_below="@+id/street_light_1"
-            android:layout_toLeftOf="@+id/img_banana_layer_1"
-            android:layout_toStartOf="@+id/img_banana_layer_1" />
+            android:layout_above="@+id/book_shop"
+            android:layout_alignLeft="@+id/packet"
+            android:layout_alignStart="@+id/packet" />
 
         <ImageView
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:id="@+id/book_shop"
             android:background="@drawable/book_shop"
-            android:layout_above="@+id/instruction2"
-            android:layout_alignLeft="@+id/packet"
-            android:layout_alignStart="@+id/packet" />
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/instruction"
+            android:layout_toStartOf="@+id/instruction" />
 
         <ImageView
             android:layout_width="45dp"
@@ -285,8 +283,8 @@
             android:id="@+id/direction"
             android:background="@drawable/direction"
             android:layout_below="@+id/book_shop"
-            android:layout_alignLeft="@+id/instruction"
-            android:layout_alignStart="@+id/instruction" />
+            android:layout_toRightOf="@+id/book_shop"
+            android:layout_toEndOf="@+id/book_shop" />
 
         <ImageView
             android:layout_width="43dp"
@@ -294,71 +292,69 @@
             android:id="@+id/instruction"
             android:background="@drawable/instruction"
             android:layout_above="@+id/poster5"
-            android:layout_toLeftOf="@+id/bottle"
-            android:layout_toStartOf="@+id/bottle" />
+            android:layout_alignLeft="@+id/bottle"
+            android:layout_alignStart="@+id/bottle" />
 
         <ImageView
             android:layout_width="45dp"
             android:layout_height="wrap_content"
             android:id="@+id/instruction2"
             android:background="@drawable/instruction"
-            android:layout_above="@+id/instruction"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="45dp"
-            android:layout_marginStart="45dp" />
+            android:layout_below="@+id/direction"
+            android:layout_toLeftOf="@+id/garbage2"
+            android:layout_toStartOf="@+id/garbage2" />
 
         <ImageView
             android:layout_width="45dp"
             android:layout_height="30dp"
             android:id="@+id/light1"
             android:background="@drawable/light1_1"
-            android:layout_above="@+id/street_light_2"
             android:layout_toRightOf="@+id/light2"
-            android:layout_toEndOf="@+id/light2" />
+            android:layout_toEndOf="@+id/light2"
+            android:layout_above="@+id/street_light_2" />
 
         <ImageView
             android:layout_width="30dp"
             android:layout_height="15dp"
             android:id="@+id/light2"
             android:background="@drawable/light2_1"
-            android:layout_above="@+id/book_shop"
-            android:layout_toRightOf="@+id/garbage1"
-            android:layout_toEndOf="@+id/garbage1" />
+            android:layout_below="@+id/street_light_2"
+            android:layout_toRightOf="@+id/tools_container"
+            android:layout_toEndOf="@+id/tools_container" />
 
         <ImageView
             android:layout_width="150dp"
             android:layout_height="75dp"
             android:id="@+id/garbage1"
             android:background="@drawable/garbage1"
-            android:layout_above="@+id/img_banana_layer_2"
-            android:layout_alignRight="@+id/instruction2"
-            android:layout_alignEnd="@+id/instruction2" />
+            android:layout_alignTop="@+id/paper"
+            android:layout_toLeftOf="@+id/light2"
+            android:layout_toStartOf="@+id/light2" />
 
         <ImageView
             android:layout_width="120dp"
             android:layout_height="45dp"
             android:id="@+id/garbage2"
             android:background="@drawable/garbage2"
-            android:layout_alignTop="@+id/garbage1"
-            android:layout_toLeftOf="@+id/street_light_2"
-            android:layout_toStartOf="@+id/street_light_2" />
+            android:layout_above="@+id/paper"
+            android:layout_toLeftOf="@+id/paper"
+            android:layout_toStartOf="@+id/paper" />
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="30dp"
             android:id="@+id/paper"
             android:background="@drawable/paper"
-            android:layout_alignTop="@+id/bottle"
-            android:layout_alignRight="@+id/garbage2"
-            android:layout_alignEnd="@+id/garbage2" />
+            android:layout_above="@+id/shoes"
+            android:layout_toRightOf="@+id/light1"
+            android:layout_toEndOf="@+id/light1" />
 
         <ImageView
             android:layout_width="60dp"
             android:layout_height="30dp"
             android:id="@+id/bottle"
             android:background="@drawable/can"
-            android:layout_alignTop="@+id/tap"
+            android:layout_alignTop="@+id/garbage1"
             android:layout_toLeftOf="@+id/img_banana_layer_2"
             android:layout_toStartOf="@+id/img_banana_layer_2" />
 
@@ -367,27 +363,27 @@
             android:layout_height="30dp"
             android:id="@+id/imageView5"
             android:background="@drawable/bottle"
-            android:layout_alignTop="@+id/tap"
-            android:layout_toLeftOf="@+id/tap"
-            android:layout_toStartOf="@+id/tap" />
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/poster4"
+            android:layout_toStartOf="@+id/poster4" />
 
         <ImageView
             android:layout_width="45dp"
             android:layout_height="30dp"
             android:id="@+id/cupandstraw"
             android:background="@drawable/cupandstraw"
-            android:layout_below="@+id/img_bench"
-            android:layout_alignLeft="@+id/img_bench"
-            android:layout_alignStart="@+id/img_bench" />
+            android:layout_above="@+id/imageView5"
+            android:layout_toLeftOf="@+id/bone"
+            android:layout_toStartOf="@+id/bone" />
 
         <ImageView
             android:layout_width="53dp"
             android:layout_height="30dp"
             android:id="@+id/packet"
             android:background="@drawable/packet"
-            android:layout_above="@+id/img_banana_layer_1"
-            android:layout_toLeftOf="@+id/instruction"
-            android:layout_toStartOf="@+id/instruction" />
+            android:layout_above="@+id/img_banana_layer_2"
+            android:layout_toLeftOf="@+id/book_shop"
+            android:layout_toStartOf="@+id/book_shop" />
 
         <ImageView
             android:layout_width="85dp"
@@ -395,17 +391,18 @@
             android:id="@+id/smoke1"
             android:background="@drawable/animation_smoke"
             android:layout_above="@+id/img_billboard_1"
-            android:layout_alignRight="@+id/bone"
-            android:layout_alignEnd="@+id/bone" />
+            android:layout_alignRight="@+id/poster1"
+            android:layout_alignEnd="@+id/poster1" />
 
         <ImageView
             android:layout_width="75dp"
             android:layout_height="wrap_content"
             android:id="@+id/smoke2"
             android:background="@drawable/animation_smoke"
-            android:layout_alignBottom="@+id/street_light_2"
-            android:layout_toRightOf="@+id/img_billboard_2"
-            android:layout_toEndOf="@+id/img_billboard_2" />
+            android:layout_alignParentTop="true"
+            android:layout_alignLeft="@+id/img_dustbin"
+            android:layout_alignStart="@+id/img_dustbin"
+            android:layout_alignBottom="@+id/smoke1" />
 
         <ImageView
             android:layout_width="75dp"
@@ -413,8 +410,8 @@
             android:id="@+id/shoes"
             android:background="@drawable/shoes"
             android:layout_below="@+id/packet"
-            android:layout_toRightOf="@+id/garbage1"
-            android:layout_toEndOf="@+id/garbage1" />
+            android:layout_toLeftOf="@+id/bottle"
+            android:layout_toStartOf="@+id/bottle" />
 
         <ImageView
             android:layout_width="60dp"
@@ -422,8 +419,8 @@
             android:id="@+id/bone"
             android:background="@drawable/bone"
             android:layout_alignTop="@+id/cupandstraw"
-            android:layout_toLeftOf="@+id/imageView5"
-            android:layout_toStartOf="@+id/imageView5" />
+            android:layout_alignRight="@+id/poster1"
+            android:layout_alignEnd="@+id/poster1" />
 
         <ImageView
             android:layout_width="70dp"
@@ -445,6 +442,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/map"
+            android:textSize="32sp"
             android:id="@+id/btn_map_in_level"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
@@ -461,6 +459,7 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             style="@style/btn_wood"
+            android:textSize="32sp"
             android:background="#5A2C23"/>
 
         <LinearLayout
@@ -516,6 +515,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/reset"
+            android:textSize="32sp"
             android:id="@+id/btn_reset_level"
             style="@style/btn_wood"
             android:background="#5A2C23"

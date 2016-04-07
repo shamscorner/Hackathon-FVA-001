@@ -1,6 +1,7 @@
 package com.fva_001.flashvsarrow.com.fva_001;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
@@ -23,6 +24,8 @@ public class EntireMap extends AppCompatActivity implements View.OnTouchListener
 
     private ImageView map_area;
     private MediaPlayer background_music;
+    int pollution, unorganized, risk;
+    private SharedPreferences pref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,12 @@ public class EntireMap extends AppCompatActivity implements View.OnTouchListener
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.entire_map);
+
+        //initialize the sharedpreferences file
+        pref = getApplicationContext().getSharedPreferences("core_fva", MODE_PRIVATE);
+        pollution = pref.getInt("PERCENT_POL", 0);
+        unorganized = pref.getInt("PERCENT_UN", 0);
+        risk = pref.getInt("PERCENT_RISK", 0);
 
         map_area = (ImageView)findViewById(R.id.map_area);
         map_area.setOnTouchListener(this);
@@ -89,31 +98,31 @@ public class EntireMap extends AppCompatActivity implements View.OnTouchListener
                 int tolerance = 25;
                 if (closeMatch(Color.rgb(51, 153, 153), touchColor, tolerance)) {
                     // this is the area for the rangpur
-                    DialogArea dialogArea = new DialogArea(EntireMap.this, "rangpur", 20, 30, 40);
+                    DialogArea dialogArea = new DialogArea(EntireMap.this, "rangpur", pollution, unorganized, risk);
                     dialogArea.show();
                 }else if (closeMatch(Color.rgb(204, 204, 51), touchColor, tolerance)) {
                     // this is the area for the rajshahi
-                    DialogArea dialogArea = new DialogArea(EntireMap.this, "rajshahi", 20, 30, 40);
+                    DialogArea dialogArea = new DialogArea(EntireMap.this, "rajshahi", pollution, unorganized, risk);
                     dialogArea.show();
                 }else if (closeMatch(Color.rgb(0, 115, 85), touchColor, tolerance)) {
                     // this is the area for the dhaka
-                    DialogArea dialogArea = new DialogArea(EntireMap.this, "dhaka", 20, 30, 40);
+                    DialogArea dialogArea = new DialogArea(EntireMap.this, "dhaka", pollution, unorganized, risk);
                     dialogArea.show();
                 }else if (closeMatch(Color.rgb(255, 51, 102), touchColor, tolerance)) {
                     // this is the area for the khulna
-                    DialogArea dialogArea = new DialogArea(EntireMap.this, "khulna", 20, 30, 40);
+                    DialogArea dialogArea = new DialogArea(EntireMap.this, "khulna", pollution, unorganized, risk);
                     dialogArea.show();
                 }else if (closeMatch(Color.rgb(153, 187, 102), touchColor, tolerance)) {
                     // this is the area for the barisal
-                    DialogArea dialogArea = new DialogArea(EntireMap.this, "barishal", 20, 30, 40);
+                    DialogArea dialogArea = new DialogArea(EntireMap.this, "barishal", pollution, unorganized, risk);
                     dialogArea.show();
                 }else if (closeMatch(Color.rgb(204, 51, 51), touchColor, tolerance)) {
                     // this is the area for the chittagong
-                    DialogArea dialogArea = new DialogArea(EntireMap.this, "chittagong", 20, 30, 40);
+                    DialogArea dialogArea = new DialogArea(EntireMap.this, "chittagong", pollution, unorganized, risk);
                     dialogArea.show();
                 }else if (closeMatch(Color.rgb(204, 102, 153), touchColor, tolerance)) {
                     // this is the area for the sylhet
-                    DialogArea dialogArea = new DialogArea(EntireMap.this, "sylhet", 20, 30, 40);
+                    DialogArea dialogArea = new DialogArea(EntireMap.this, "sylhet", pollution, unorganized, risk);
                     dialogArea.show();
                 }else {
                     Toast error_toast = Toast.makeText(getApplicationContext(), "Select one of these cities", Toast.LENGTH_SHORT);
